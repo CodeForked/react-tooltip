@@ -7,13 +7,13 @@
     "@babel/plugin-proposal-json-strings"
   ],
   "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "useBuiltIns": "entry",
-          "corejs": "3.12"
-        }
-      ],
-      "@babel/preset-react"
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "entry",
+        "corejs": "3.21"
+      }
+    ],
+    "@babel/preset-react"
   ]
 }
