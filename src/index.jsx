@@ -23,7 +23,7 @@ import baseCss from './index.scss';
 import { generateTooltipStyle } from './decorators/styler';
 
 /* Polyfill */
-import 'core-js/modules/es.array.find';
+// import 'core-js/modules/es.array.find';
 
 @staticMethods
 @windowListener
@@ -135,6 +135,7 @@ class ReactTooltip extends React.Component {
     this.delayHideLoop = null;
     this.delayReshow = null;
     this.intervalUpdateContent = null;
+    console.log('constructor');
   }
 
   /**
@@ -272,6 +273,7 @@ class ReactTooltip extends React.Component {
   bindListener() {
     const { id, globalEventOff, isCapture } = this.props;
     const targetArray = this.getTargetArray(id);
+    console.log('bindListener');
 
     targetArray.forEach((target) => {
       if (target.getAttribute('currentItem') === null) {
@@ -284,6 +286,7 @@ class ReactTooltip extends React.Component {
     });
 
     if (this.isBodyMode()) {
+      console.log('bindBodyListener');
       this.bindBodyListener(targetArray);
     } else {
       targetArray.forEach((target) => {
@@ -303,6 +306,7 @@ class ReactTooltip extends React.Component {
             isCaptureMode
           );
         }
+        console.log('Add listeners for leave');
         target.addEventListener('mouseleave', this.hideTooltip, isCaptureMode);
         target.addEventListener('blur', this.hideTooltip, isCaptureMode);
       });
@@ -629,6 +633,7 @@ class ReactTooltip extends React.Component {
    * When mouse leave, hide tooltip
    */
   hideTooltip(e, hasTarget, options = { isScroll: false }) {
+    console.log('hideTooltip');
     const { disable } = this.state;
     const { isScroll } = options;
     const delayHide = isScroll ? 0 : this.state.delayHide;
