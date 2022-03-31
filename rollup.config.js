@@ -16,7 +16,7 @@ import nested from 'postcss-nested';
 import pkg from './package.json';
 
 export default {
-  input: 'src/index.js',
+  input: 'src/index.jsx',
   output: [
     {
       file: pkg.main,

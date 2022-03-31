@@ -1,6 +1,7 @@
 {
-  "extends": "stylelint-config-standard",
-  "ignoreFiles": [
-  	"src/decorators/*.js"
-  ]
+  "extends": "stylelint-config-standard-scss",
+  "ignoreFiles": ["src/decorators/*.js", "src/*.jsx", "**/*.js"],
+  "rules": {
+    "selector-class-pattern": null
+  }
 }
