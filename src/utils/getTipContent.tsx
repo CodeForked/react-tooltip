@@ -11,9 +11,14 @@
  * @return
  * - String or react component
  */
-import React from 'react';
+import React, { ReactNode } from 'react';
 
-export default function getTipContent(tip, children, getContent, multiline) {
+export default function getTipContent(
+  tip: string,
+  children: ReactNode,
+  getContent,
+  multiline: boolean | string
+) {
   if (children) return children;
   if (getContent !== undefined && getContent !== null) return getContent; // getContent can be 0, '', etc.
   if (getContent === null) return null; // Tip not exist and children is null or undefined

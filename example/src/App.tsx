@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-
 import ReactTooltip from 'react-tooltip';
 
-export default class App extends Component {
+export default class App extends Component<any, any> {
   constructor(props) {
     super(props);
     this.state = {

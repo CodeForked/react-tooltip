@@ -1,9 +1,9 @@
 import React from 'react';
-import ReactTooltip from '../src/index.jsx';
+import ReactTooltip from '../src/index';
 import { render, cleanup } from '@testing-library/react';
 import { expect } from 'chai';
-const forEach = require('mocha-each');
-const jsdom = require('mocha-jsdom');
+import forEach from 'mocha-each';
+import jsdom from 'mocha-jsdom';
 
 afterEach(() => {
   cleanup();

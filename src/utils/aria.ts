@@ -1,17 +1,19 @@
+import { ReactTooltipProps } from '../ReactTooltipProps';
+
 /**
  * Support aria- and role in ReactTooltip
  *
  * @params props {Object}
  * @return {Object}
  */
-export function parseAria(props) {
+export function parseAria(props: ReactTooltipProps): object {
   const ariaObj = {};
   Object.keys(props)
-    .filter(prop => {
+    .filter((prop) => {
       // aria-xxx and role is acceptable
       return /(^aria-\w+$|^role$)/.test(prop);
     })
-    .forEach(prop => {
+    .forEach((prop) => {
       ariaObj[prop] = props[prop];
     });
 
