@@ -1,5 +1,5 @@
 {
-  "name": "@jafin/react-tooltip",
+  "name": "@codefork/react-tooltip",
   "version": "4.3.0",
   "description": "react tooltip component",
   "main": "dist/index.js",
@@ -22,7 +22,7 @@
     "build:watch": "rollup -c -w",
     "start": "npm-run-all clean build:watch",
     "gh-pages": "gh-pages -d example",
-    "github-changes": "github-changes -o wwayne -r react-tooltip -a --only-pulls --use-commit-body",
+    "github-changes": "github-changes -o jafin -r react-tooltip -a --only-pulls --use-commit-body",
     "copy:types": "copyfiles ./out-tsc/src/**/*.d.ts dist/ --up 2",
     "cm": "git cz",
     "semantic-release": "semantic-release"
