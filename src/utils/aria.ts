@@ -1,4 +1,4 @@
-import { ReactTooltipProps } from '../ReactTooltipProps';
+import { TooltipProps } from '../ReactTooltipProps';
 
 /**
  * Support aria- and role in ReactTooltip
@@ -6,7 +6,7 @@ import { ReactTooltipProps } from '../ReactTooltipProps';
  * @params props {Object}
  * @return {Object}
  */
-export function parseAria(props: ReactTooltipProps): object {
+export function parseAria(props: TooltipProps): object {
   const ariaObj = {};
   Object.keys(props)
     .filter((prop) => {

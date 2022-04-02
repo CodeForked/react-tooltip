@@ -18,7 +18,7 @@ import { generateUUID } from './utils/uuid';
 import baseCss from './index.scss';
 import { generateTooltipStyle } from './decorators/styler';
 import { BodyModeListener, CustomColor } from './types';
-import { ReactTooltipProps } from './ReactTooltipProps';
+import { Effect, Offset, Place, TooltipProps, Wrapper } from './ReactTooltipProps';
 import { checkStatus } from './decorators/customEvent';
 
 const dispatchGlobalEvent = (eventName, opts) => {
@@ -61,14 +61,14 @@ const customListeners = {
 
 type TooltipState = {
   uuid: string;
-  place: string;
-  desiredPlace: string;
+  place: Place;
+  desiredPlace: Place;
   type: string;
-  effect: string;
+  effect: Effect;
   show: boolean;
   border: boolean;
   customColors: CustomColor;
-  offset: string | object;
+  offset: Offset;
   padding: string;
   extraClass: string;
   html: boolean;
@@ -94,7 +94,7 @@ type GetContentFn = {
 
 export type GetContentTypes = GetContentFn | string;
 
-class ReactTooltip extends React.Component<ReactTooltipProps, TooltipState> {
+class ReactTooltip extends React.Component<TooltipProps, TooltipState> {
   mount: boolean;
   delayShowLoop?: NodeJS.Timeout;
   delayHideLoop?: NodeJS.Timeout;
@@ -149,7 +149,7 @@ class ReactTooltip extends React.Component<ReactTooltipProps, TooltipState> {
   static defaultProps = {
     insecure: true,
     resizeHide: true,
-    wrapper: 'div',
+    wrapper: 'div' as Wrapper,
     clickable: false
   };
 
@@ -157,7 +157,7 @@ class ReactTooltip extends React.Component<ReactTooltipProps, TooltipState> {
 
   static displayName = 'ReactTooltip';
 
-  constructor(props: ReactTooltipProps) {
+  constructor(props: TooltipProps) {
     super(props);
 
     this.state = {
@@ -319,8 +319,8 @@ class ReactTooltip extends React.Component<ReactTooltipProps, TooltipState> {
     }
   }
 
-  getEffect(currentTarget: HTMLElement) {
-    const dataEffect = currentTarget.getAttribute('data-effect');
+  getEffect(currentTarget: HTMLElement): Effect {
+    const dataEffect = currentTarget.getAttribute('data-effect') as Effect;
     return dataEffect || this.props.effect || 'float';
   }
 
@@ -707,11 +707,11 @@ class ReactTooltip extends React.Component<ReactTooltipProps, TooltipState> {
 
     // Make sure the correct place is set
     const desiredPlace =
-      e.currentTarget.getAttribute('data-place') || this.props.place || 'top';
-    const effect =
-      (switchToSolid && 'solid') || this.getEffect(e.currentTarget);
+      e.currentTarget.getAttribute('data-place') as Place || this.props.place || 'top';
+    const effect: Effect =
+      (switchToSolid && 'solid') as Effect || this.getEffect(e.currentTarget) as Effect;
     const offset =
-      e.currentTarget.getAttribute('data-offset') || this.props.offset || {};
+      e.currentTarget.getAttribute('data-offset') as Offset || this.props.offset || {};
     const result = getPosition(
       e,
       e.currentTarget,
