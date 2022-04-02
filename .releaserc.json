@@ -7,7 +7,6 @@
         "@semantic-release/npm",
         "@semantic-release/git"
       ],
-      "dryRun": true,
       "ci": true,
       "debug": true
   }
