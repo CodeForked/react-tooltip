@@ -860,7 +860,7 @@ export default class App extends Component<any, any> {
             </a>
             <ReactTooltip id="padding" padding="100px 50px;">Padded tooltip</ReactTooltip>
           </div>
-          <br/><br/><br/><br/><br/>
+          <br/><br/><br/><br/>
         </section>
       </div>
     );
