@@ -746,8 +746,6 @@ class ReactTooltip extends React.Component<ReactTooltipProps, TooltipState> {
         this.props.delayUpdate
       : 0;
 
-    //const self = this;
-
     const updateState = () => {
       this.setState(
         {

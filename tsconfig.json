@@ -5,7 +5,7 @@
     "outDir": "./out-tsc",
     "allowJs": true,
     "target": "es2018",
-    "module": "ESNext",
+    "module": "ESNext", //ESNext breaks mocha
     "moduleResolution": "node",
     "noImplicitAny": false,
     "noEmitOnError": true,
