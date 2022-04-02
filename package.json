@@ -57,6 +57,10 @@
     "react-dom": ">=17.0.0"
   },
   "dependencies": {
+    "prop-types": "^15.7.2",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
     "@open-wc/building-rollup": "^2.0.1",
     "@rollup/plugin-typescript": "^8.3.1",
     "@testing-library/jest-dom": "^5.16.3",
@@ -71,15 +75,11 @@
     "eslint-plugin-react-hooks": "^4.4.0",
     "jest": "^27.5.1",
     "postcss": "^8.4.12",
-    "prop-types": "^15.7.2",
     "rollup-plugin-css": "^1.0.10",
     "rollup-plugin-terser": "^7.0.2",
     "ts-jest": "^27.1.4",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.3",
-    "uuid": "^8.3.2"
-  },
-  "devDependencies": {
     "@babel/cli": "^7.7.4",
     "@babel/core": "^7.7.4",
     "@babel/eslint-parser": "^7.17.0",
@@ -106,7 +106,6 @@
     "@svgr/rollup": "6.2.1",
     "@testing-library/react": "12",
     "@types/expect": "^24.3.0",
-    "@types/mocha": "^9.1.0",
     "babel-loader": "8.2.4",
     "babelify": "10.0.0",
     "browserify": "17.0.0",
@@ -137,9 +136,7 @@
     "jest-scss-transform": "^1.0.1",
     "jsdom": "19.0.0",
     "lint-staged": "12.3.7",
-    "mocha": "9.2.2",
     "mocha-each": "^2.0.1",
-    "mocha-jsdom": "^2.0.0",
     "npm-run-all": "^4.1.5",
     "postcss-nested": "^5.0.6",
     "postcss-simple-vars": "6.0.3",
@@ -164,7 +161,6 @@
     "stylelint": "^14.6.1",
     "stylelint-config-standard": "25.0.0",
     "stylelint-config-standard-scss": "^3.0.0",
-    "ts-mocha": "^9.0.2",
     "uglifyjs": "^2.4.10",
     "watchify": "4.0.0"
   },
