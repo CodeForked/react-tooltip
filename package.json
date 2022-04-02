@@ -36,6 +36,9 @@
     "type": "git",
     "url": "https://github.com/jafin/react-tooltip"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "react",
     "react-component",
