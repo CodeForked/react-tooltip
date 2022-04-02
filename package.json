@@ -1,5 +1,5 @@
 {
-  "name": "react-tooltip",
+  "name": "@jafin/react-tooltip",
   "version": "4.3.0",
   "description": "react tooltip component",
   "main": "dist/index.js",
@@ -42,7 +42,7 @@
     "tooltip",
     "react-tooltip"
   ],
-  "author": "jafin",
+  "author": "wwayne (original), jafin (updates)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jafin/react-tooltip/issues"
