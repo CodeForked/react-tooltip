@@ -7,9 +7,9 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "engines": {
-    "npm": ">=7"
+    "npm": ">=8"
   },
-  "scripts": {
+  "scripts": { 
     "pretest": "npm-run-all pretty:quick lint:staged",
     "eslint:fix": "npx eslint ./src/** --ignore-path ./.eslintignore --fix",
     "pretty:quick": "./node_modules/.bin/pretty-quick --staged",
