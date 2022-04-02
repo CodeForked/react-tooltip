@@ -53,7 +53,9 @@ export default {
     sass({ insert: false }), // will output compiled styles to output.css
     url(),
     svgr(),
-    terser() // minify es bundle
+    terser({
+      mangle:false
+    }) // minify es bundleP
   ],
   external: ['prop-types', 'uuid']
 };

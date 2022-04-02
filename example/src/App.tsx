@@ -851,6 +851,16 @@ export default class App extends Component<any, any> {
               </div>
             </pre>
           </div>
+
+          <div className="section">
+            <h4 className="title">Padding</h4>
+            <p className="sub-title">Padding</p>
+            <a data-tip data-for="padding">
+              Padding
+            </a>
+            <ReactTooltip id="padding" padding="100px 50px;">Padded tooltip</ReactTooltip>
+          </div>
+          <br/><br/><br/><br/><br/>
         </section>
       </div>
     );

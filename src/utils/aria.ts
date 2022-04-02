@@ -1,4 +1,4 @@
-import { TooltipProps } from '../ReactTooltipProps';
+import { TooltipProps } from '../TooltipProps';
 
 /**
  * Support aria- and role in ReactTooltip

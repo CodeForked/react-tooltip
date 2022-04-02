@@ -16,38 +16,38 @@ export type Type = 'dark' | 'success' | 'warning' | 'error' | 'info' | 'light';
 export type Wrapper = 'div' | 'span';
 
 export type TooltipProps = {
-  uuid: string;
-  children: ReactNode;
+  uuid?: string;
+  children?: ReactNode;
   // Placement of tooltip
   place?: Place;
   // Tooltip styling theme
-  type: Type;
+  type?: Type;
   // Behavior of tooltip
-  effect: Effect;
+  effect?: Effect;
   // Global tooltip offset, e.g., offset={{ top: 10, left: 5 }}
   offset?: Offset;
-  padding: string;
+  padding?: string;
   multiline?: boolean;
-  border: boolean;
-  textColor: string;
-  backgroundColor: string;
-  borderColor: string;
-  arrowColor: string;
-  insecure: boolean;
-  class: string;
-  className: string;
-  id: string;
-  html: boolean;
-  delayHide: number;
-  delayUpdate: number;
-  delayShow: number;
-  event: string;
-  eventOff: string;
-  isCapture: boolean;
-  globalEventOff: string;
-  getContent: GetContentTypes | GetContentTypes[];
-  afterShow: EventFunc;
-  afterHide: EventFunc;
+  border?: boolean;
+  textColor?: string;
+  backgroundColor?: string;
+  borderColor?: string;
+  arrowColor?: string;
+  insecure?: boolean;
+  class?: string;
+  className?: string;
+  id?: string;
+  html?: boolean;
+  delayHide?: number;
+  delayUpdate?: number;
+  delayShow?: number;
+  event?: string;
+  eventOff?: string;
+  isCapture?: boolean;
+  globalEventOff?: string;
+  getContent?: GetContentTypes | GetContentTypes[];
+  afterShow?: EventFunc;
+  afterHide?: EventFunc;
   overridePosition?(
     position: { left: number; top: number },
     currentEvent: React.MouseEvent<HTMLElement, MouseEvent>,

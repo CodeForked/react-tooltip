@@ -18,7 +18,7 @@ import { generateUUID } from './utils/uuid';
 import baseCss from './index.scss';
 import { generateTooltipStyle } from './decorators/styler';
 import { BodyModeListener, CustomColor } from './types';
-import { Effect, Offset, Place, TooltipProps, Wrapper } from './ReactTooltipProps';
+import { Effect, Offset, Place, TooltipProps, Wrapper } from './TooltipProps';
 import { checkStatus } from './decorators/customEvent';
 
 const dispatchGlobalEvent = (eventName, opts) => {
