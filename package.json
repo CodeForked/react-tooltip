@@ -14,7 +14,7 @@
     "eslint:fix": "npx eslint ./src/** --ignore-path ./.eslintignore --fix",
     "pretty:quick": "./node_modules/.bin/pretty-quick --staged",
     "lint:staged": "./node_modules/.bin/lint-staged",
-    "test:unit": "jest",
+    "test": "jest",
     "clean": "rimraf dist",
     "copyfiles": "copyfiles ./src/**/*.scss out-tsc/",
     "build:rollup": "tsc && yarn copyfiles && yarn rollup -c",
