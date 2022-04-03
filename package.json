@@ -22,7 +22,7 @@
     "build:watch": "rollup -c -w",
     "start": "npm-run-all clean build:watch",
     "gh-pages": "gh-pages -d example",
-    "github-changes": "github-changes -o jafin -r react-tooltip -a --only-pulls --use-commit-body",
+    "github-changes": "github-changes -o CodeForked -r react-tooltip -a --only-pulls --use-commit-body",
     "copy:types": "copyfiles ./out-tsc/src/**/*.d.ts dist/ --up 2",
     "cm": "git cz",
     "semantic-release": "semantic-release",
@@ -38,7 +38,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jafin/react-tooltip"
+    "url": "https://github.com/CodeForked/react-tooltip"
   },
   "publishConfig": {
     "access": "public"
@@ -49,12 +49,15 @@
     "tooltip",
     "react-tooltip"
   ],
-  "author": "wwayne (original), jafin (updates)",
+  "author": "wwayne",
+  "contributors": [
+    "jafin"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jafin/react-tooltip/issues"
+    "url": "https://github.com/CodeForked/react-tooltip/issues"
   },
-  "homepage": "https://github.com/jafin/react-tooltip#readme",
+  "homepage": "https://github.com/CodeForked/react-tooltip#readme",
   "browserify-shim": {
     "react": "global:React",
     "react-dom": "global:ReactDOM"
