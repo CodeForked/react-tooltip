@@ -1,3 +1,33 @@
+# [4.3.0-alpha.1](https://github.com/jafin/react-tooltip/compare/v4.2.7...v4.3.0-alpha.1) (2022-04-03)
+
+
+### Bug Fixes
+
+* add aria hidden attribute to style tag ([#703](https://github.com/jafin/react-tooltip/issues/703)) ([d60c2b7](https://github.com/jafin/react-tooltip/commit/d60c2b703a949fbe48e8acf56e741ffbfef233f6))
+* **aftershow:** call afterShow only after state has fully updated ([54752e8](https://github.com/jafin/react-tooltip/commit/54752e81093f4c41bae1b49f7de65f28cf54df1a))
+* **build:** removing single quotes on cpy for windows shell ([#632](https://github.com/jafin/react-tooltip/issues/632)) ([9c280af](https://github.com/jafin/react-tooltip/commit/9c280af1bd651de42cd6d4417169db84534ba4ab))
+* **compability:** add polyfill and change styles ([#706](https://github.com/jafin/react-tooltip/issues/706)) ([b6e9a1c](https://github.com/jafin/react-tooltip/commit/b6e9a1cae81885890a791b1c31c218b6f78cb67c))
+* do not delay show if tooltip is already shown ([#676](https://github.com/jafin/react-tooltip/issues/676)) ([e8b9d84](https://github.com/jafin/react-tooltip/commit/e8b9d84c68e31a112d2ffcdfc5b322d4ec87ff8a))
+* **domexception:** revert previous changed for unexpected behavior ([85e38bb](https://github.com/jafin/react-tooltip/commit/85e38bbdcf7a60588924aae12fbc1da35af85de4)), closes [#667](https://github.com/jafin/react-tooltip/issues/667)
+* effect and type not properly applied at first render ([a8d0e51](https://github.com/jafin/react-tooltip/commit/a8d0e51dd5dc0eb85d985232da90d54fd031ae4b))
+* **getposition:** properly determine parents with will-change: transform ([3a76250](https://github.com/jafin/react-tooltip/commit/3a76250a228d1a37bb9a8e56e7738954777dc2dd))
+* **index.js:** fix exception when testing with Jest ([#682](https://github.com/jafin/react-tooltip/issues/682)) ([f885f1f](https://github.com/jafin/react-tooltip/commit/f885f1f97541954e7f6d8060ddda2a8f1ceb2876))
+* performance issue caused by excessive use of clearTimeout/Interval ([22aea50](https://github.com/jafin/react-tooltip/commit/22aea5086db47727feae609bb7a6f8e269b7f2de))
+* set aria-describedby value wrong when custom id ([a04d26c](https://github.com/jafin/react-tooltip/commit/a04d26cc0639054b474ca8b373c95a09b199973a))
+* **showtooltip:** check if tooltipRef is undefined ([#623](https://github.com/jafin/react-tooltip/issues/623)) ([f63eab2](https://github.com/jafin/react-tooltip/commit/f63eab2ccca5ef1182e9e7c3e1271165fd4e5b4a))
+* **src/index.js:** add accessibility support for tabbing ([#695](https://github.com/jafin/react-tooltip/issues/695)) ([ae936a5](https://github.com/jafin/react-tooltip/commit/ae936a5275ee4a2cf32a84dbf8dc004e20b748e1))
+* **src/index.js:** hide tooltip if blurred (tabbed out) ([#699](https://github.com/jafin/react-tooltip/issues/699)) ([e0a2a1d](https://github.com/jafin/react-tooltip/commit/e0a2a1d0351491396defc528f253f80c7806bf42))
+* **style injection:** change style injection default root ([a00c5b7](https://github.com/jafin/react-tooltip/commit/a00c5b76c4e7fb56f27461c34ed3511b45ba8236)), closes [#665](https://github.com/jafin/react-tooltip/issues/665)
+* **styles:** add styles for shadow dom ([00d1539](https://github.com/jafin/react-tooltip/commit/00d1539f427fc06f154fcbd19b83fd236c801917)), closes [#597](https://github.com/jafin/react-tooltip/issues/597)
+* **styles:** change style injection way ([#668](https://github.com/jafin/react-tooltip/issues/668)) ([1e10cce](https://github.com/jafin/react-tooltip/commit/1e10ccee4f79f27b98c53632412b81fbc890c9a7)), closes [#650](https://github.com/jafin/react-tooltip/issues/650)
+* **type:** added role property to types ([#679](https://github.com/jafin/react-tooltip/issues/679)) ([9b49395](https://github.com/jafin/react-tooltip/commit/9b493958d20cbaa18c2e494c5d0ca30a32aa05bf))
+
+
+### Features
+
+* **component:** adding "padding" property to customize padding style ([9ae765a](https://github.com/jafin/react-tooltip/commit/9ae765a3cc38b36ce5ea77edd8fcc0f7bd9646a6))
+* convert to typescript ([dc547c1](https://github.com/jafin/react-tooltip/commit/dc547c18a0aa202468f77ac5def6f9c982d50068))
+
 ## [4.2.21](https://github.com/wwayne/react-tooltip/compare/v4.2.20...v4.2.21) (2021-05-28)
 
 
