@@ -1,5 +1,5 @@
 {
-  "name": "@codefork/react-tooltip-test",
+  "name": "@codefork/react-tooltip",
   "version": "4.3.0-alpha.1",
   "description": "react tooltip component",
   "main": "dist/index.js",
