@@ -1,21 +1,36 @@
 # react-tooltip
 
-[![Version](http://img.shields.io/npm/v/react-tooltip.svg)](https://www.npmjs.org/package/react-tooltip)
+[![Version](https://img.shields.io/npm/v/@codefork/react-tooltip.svg)](https://www.npmjs.com/package/@codefork/react-tooltip)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![npm download][download-image]][download-url]
-[![Build Status](https://travis-ci.org/wwayne/react-tooltip.svg?branch=master)](https://travis-ci.org/wwayne/react-tooltip)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
-[download-image]: https://img.shields.io/npm/dm/react-tooltip.svg?style=flat-square
-[download-url]: https://npmjs.org/package/react-tooltip
+<!-- [![Build Status](https://travis-ci.org/wwayne/react-tooltip.svg?branch=master)](https://travis-ci.org/wwayne/react-tooltip) -->
+
+[download-image]: https://img.shields.io/npm/dm/@codefork/react-tooltip.svg?style=flat-square
+[download-url]: https://npmjs.org/package/@codefork/react-tooltip
+
+## Overview
+
+This is aforked version of the [react-tooltip](https://github.com/wwayne/react-tooltip) from Wang Zixiao (wwayne).
+
+Notable changes from the original package:-
+
+- source coverted to typescript
 
 ## Demo
 
 [![Edit ReactTooltip](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/heuristic-curran-bddeu?fontsize=14&hidenavigation=1&theme=dark)
 
-Or see it on [Github Page](https://wwayne.github.io/react-tooltip).
+Or see it on [Github Page](https://codeforked.github.io/react-tooltip/).
 
 ## Maintainers
+
+### Forked Repo
+
+[jafin](https://github.com/jafin)
+
+### Original Repo
 
 [aronhelser](https://github.com/aronhelser) Passive maintainer - accepting PRs and doing minor testing, but not fixing issues or doing active development.
 
@@ -28,13 +43,13 @@ We would gladly accept a new maintainer to help out!
 ## Installation
 
 ```sh
-npm install react-tooltip
+npm install @codeforked/react-tooltip
 ```
 
 or
 
 ```sh
-yarn add react-tooltip
+yarn add @codeforked/react-tooltip
 ```
 
 ## Usage
@@ -61,7 +76,7 @@ import ReactTooltip from 'react-tooltip';
 
 ### Standalone
 
-You can import `node_modules/react-tooltip/dist/index.js` into your page. Please make sure that you have already imported `react` and `react-dom` into your page.
+You can import `node_modules/@codefork/react-tooltip/dist/index.js` into your page. Please make sure that you have already imported `react` and `react-dom` into your page.
 
 ## Options
 
@@ -200,20 +215,19 @@ to allow event wireup.
 
 #### Example
 
-```jsx
+```tsx
 <app>
   <ReactTooltip id="foo" />
   <list />
 </app>
 ```
 
-```jsx
-
+```tsx
 const dynamicList = (props) => {
 
- useEffect(() => {
-        ReactTooltip.rebuild();
-    });
+useEffect(() => {
+      ReactTooltip.rebuild();
+  });
 
 return(
   <list>
