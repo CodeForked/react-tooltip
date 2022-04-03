@@ -21,7 +21,7 @@
     "build": "npm-run-all clean build:rollup copy:types",
     "build:watch": "rollup -c -w",
     "start": "npm-run-all clean build:watch",
-    "gh-pages": "cross-env NODE_DEBUG=gh-pages gh-pages -d example",
+    "publish:gh-pages": "cd example && yarn publish",
     "github-changes": "github-changes -o CodeForked -r react-tooltip -a --only-pulls --use-commit-body",
     "copy:types": "copyfiles ./out-tsc/src/**/*.d.ts dist/ --up 2",
     "cm": "git cz",
