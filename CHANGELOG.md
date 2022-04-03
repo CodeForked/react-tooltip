@@ -1,3 +1,19 @@
+# [4.3.0-alpha.1](https://github.com/CodeForked/react-tooltip/compare/v4.2.21...v4.3.0-alpha.1) (2022-04-03)
+
+
+### Bug Fixes
+
+* **aftershow:** call afterShow only after state has fully updated ([54752e8](https://github.com/CodeForked/react-tooltip/commit/54752e81093f4c41bae1b49f7de65f28cf54df1a))
+* effect and type not properly applied at first render ([a8d0e51](https://github.com/CodeForked/react-tooltip/commit/a8d0e51dd5dc0eb85d985232da90d54fd031ae4b))
+* performance issue caused by excessive use of clearTimeout/Interval ([22aea50](https://github.com/CodeForked/react-tooltip/commit/22aea5086db47727feae609bb7a6f8e269b7f2de))
+* set aria-describedby value wrong when custom id ([a04d26c](https://github.com/CodeForked/react-tooltip/commit/a04d26cc0639054b474ca8b373c95a09b199973a))
+
+
+### Features
+
+* **component:** adding "padding" property to customize padding style ([9ae765a](https://github.com/CodeForked/react-tooltip/commit/9ae765a3cc38b36ce5ea77edd8fcc0f7bd9646a6))
+* convert to typescript ([dc547c1](https://github.com/CodeForked/react-tooltip/commit/dc547c18a0aa202468f77ac5def6f9c982d50068))
+
 # 1.0.0-alpha.1 (2022-04-03)
 
 
