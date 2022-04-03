@@ -1,3 +1,10 @@
+# [4.3.0-alpha.2](https://github.com/CodeForked/react-tooltip/compare/v4.3.0-alpha.1...v4.3.0-alpha.2) (2022-04-03)
+
+
+### Bug Fixes
+
+* **build:** fix name of package ([fef4f12](https://github.com/CodeForked/react-tooltip/commit/fef4f120989ed5ad7150581ac388f2db8147d1b5))
+
 # [4.3.0-alpha.1](https://github.com/CodeForked/react-tooltip/compare/v4.2.21...v4.3.0-alpha.1) (2022-04-03)
 
 
