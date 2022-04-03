@@ -1,4 +1,4 @@
-# react-tooltip
+# @codefork/react-tooltip
 
 [![Version](https://img.shields.io/npm/v/@codefork/react-tooltip.svg)](https://www.npmjs.com/package/@codefork/react-tooltip)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
