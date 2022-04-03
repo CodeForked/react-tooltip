@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "baseUrl": "./src",
+    "outDir": "./out-tsc",
+    "allowJs": true,
+    "target": "es2018",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "strict": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "rootDir": "src", // or ./ ???
+    "experimentalDecorators": true,
+    "declaration": true,
+    "declarationMap": true,
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "~/*": ["./*"]
+    }
+  },
+  "include": ["./src"]
+}

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-
 import ReactTooltip from 'react-tooltip';
 
-export default class App extends Component {
+export default class App extends Component<any, any> {
   constructor(props) {
     super(props);
     this.state = {
@@ -270,7 +269,7 @@ export default class App extends Component {
               <div className="side">
                 <a
                   data-for="custom-off-event"
-                  ref={ref => (this.targetRef = ref)}
+                  ref={(ref) => (this.targetRef = ref)}
                   data-tip="custom show and hide"
                   data-event="click"
                   data-event-off="dblclick"
@@ -478,7 +477,7 @@ export default class App extends Component {
               </div>
               <ReactTooltip
                 id="enrich"
-                getContent={dataTip => 'This little buddy is ' + dataTip}
+                getContent={(dataTip) => 'This little buddy is ' + dataTip}
               />
             </div>
             <br />
@@ -512,7 +511,7 @@ export default class App extends Component {
                   <br />
                   The tooltip will hide.
                   <br />
-                  Make sure you set data-iscapture="true"
+                  Make sure you set data-iscapture=&quot;true&quot;
                 </div>
                 <ReactTooltip
                   id="scrollContent"
@@ -692,7 +691,7 @@ export default class App extends Component {
 
               <ReactTooltip
                 id="soclose"
-                getContent={dataTip => (
+                getContent={(dataTip) => (
                   <div>
                     <h3>This little buddy is {dataTip}</h3>
                     <p>Put mouse here</p>
@@ -803,8 +802,8 @@ export default class App extends Component {
                 >
                   <div>header</div>
                   <img
-                    src="http://lorempixel.com/100/1500"
-                    alt="lorem 100x1500"
+                    src="http://picsum.photos/200/1500"
+                    alt="picsum.photos 200x1500"
                   />
                   <div>footer</div>
                 </ReactTooltip>
@@ -814,8 +813,8 @@ export default class App extends Component {
                 <ReactTooltip id="noOverridePosition">
                   <div>header</div>
                   <img
-                    src="http://lorempixel.com/100/1500"
-                    alt="lorem 100x1500"
+                    src="http://picsum.photos/200/1500"
+                    alt="picsum.photos 200x1500"
                   />
                   <div>footer</div>
                 </ReactTooltip>
@@ -839,19 +838,34 @@ export default class App extends Component {
                     '  return { top, left }\n' +
                     '} }>\n' +
                     '  <div>header</div>\n' +
-                    '  <img src="http://lorempixel.com/100/1500" alt="lorem image 100x1500" />\n' +
+                    '  <img src="http://placekitten.com/100/1500" alt="lorem image 100x1500" />\n' +
                     '  <div>footer</div>\n' +
                     '</ReactTooltip>\n' +
                     "<a data-tip data-for='noOverridePosition'>( •̀д•́) noOverride</a>\n" +
                     "<ReactTooltip id='noOverridePosition'>\n" +
                     '  <div>header</div>\n' +
-                    '  <img src="http://lorempixel.com/100/1500" alt="lorem image 100x1500" />\n' +
+                    '  <img src="http://placekitten.com/100/1500" alt="lorem image 100x1500" />\n' +
                     '  <div>footer</div>\n' +
                     '</ReactTooltip>'}
                 </p>
               </div>
             </pre>
           </div>
+
+          <div className="section">
+            <h4 className="title">Padding</h4>
+            <p className="sub-title">Padding</p>
+            <a data-tip data-for="padding">
+              Padding
+            </a>
+            <ReactTooltip id="padding" padding="100px 50px;">
+              Padded tooltip
+            </ReactTooltip>
+          </div>
+          <br />
+          <br />
+          <br />
+          <br />
         </section>
       </div>
     );

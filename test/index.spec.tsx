@@ -1,17 +1,16 @@
+/**
+ * @jest-environment jsdom
+ */
 import React from 'react';
-import ReactTooltip from '../src/index.js';
+import ReactTooltip from '../src/index';
 import { render, cleanup } from '@testing-library/react';
-import { expect } from 'chai';
-const forEach = require('mocha-each');
-const jsdom = require('mocha-jsdom');
+import forEach from 'mocha-each';
 
 afterEach(() => {
   cleanup();
 });
 
 describe('Tooltip', () => {
-  jsdom({ url: 'http://localhost/' });
-
   forEach([
     [
       { textColor: 'green', backgroundColor: 'red', arrowColor: 'blue' },
@@ -184,7 +183,7 @@ describe('Tooltip', () => {
 
     const tooltip = document.getElementById('colorSpec');
 
-    expect(tooltip.className).to.match(
+    expect(tooltip.className).toMatch(
       new RegExp(
         '__react_component_tooltip [a-zA-Z0-9-]+ show' +
           (props.border ? ' border ' : ' ') +
@@ -193,26 +192,30 @@ describe('Tooltip', () => {
         'i'
       )
     );
-
     const uuid = tooltip.className.split(' ')[1];
-    const cssRules = tooltip.firstElementChild.sheet.cssRules;
-    const mainCssRule = cssRules.find(rule => rule.selectorText === `.${uuid}`)
-      .style;
+    // TODO: incorrect type...
+    const cssRules = (tooltip.firstElementChild as any).sheet.cssRules;
+    const mainCssRule = cssRules.find(
+      (rule) => rule.selectorText === `.${uuid}`
+    ).style;
 
-    expect(mainCssRule.color, 'Text color').to.equal(res.textColor);
-    expect(mainCssRule.background, 'Background color').to.equal(res.background);
-    expect(mainCssRule.border, 'Border color').to.equal(
+    // 'Text color'
+    expect(mainCssRule.color).toBe(res.textColor);
+    // 'Background color'
+    expect(mainCssRule.background).toBe(res.background);
+    // 'Border color'
+    expect(mainCssRule.border).toBe(
       '1px solid ' + (res.borderColor ? res.borderColor : 'transparent')
     );
 
     const arrowPositions = ['top', 'bottom', 'left', 'right'];
-    arrowPositions.forEach(pos => {
+    arrowPositions.forEach((pos) => {
+      // pos + ' arrow color'
       expect(
         cssRules.find(
-          rule => rule.selectorText === `.${uuid}.place-${pos}::after`
-        ).style[`border-${pos}-color`],
-        pos + ' arrow color'
-      ).to.equal(res.arrowColor ? res.arrowColor : res.background);
+          (rule) => rule.selectorText === `.${uuid}.place-${pos}::after`
+        ).style[`border-${pos}-color`]
+      ).toBe(res.arrowColor ? res.arrowColor : res.background);
     });
   });
 });

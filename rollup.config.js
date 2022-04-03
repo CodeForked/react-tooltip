@@ -1,56 +1,59 @@
-import babel from 'rollup-plugin-babel';
-import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import external from 'rollup-plugin-peer-deps-external';
-import sass from 'rollup-plugin-sass';
 import postcss from 'rollup-plugin-postcss';
-import url from 'rollup-plugin-url';
-import { eslint } from 'rollup-plugin-eslint';
-import stylelint from 'rollup-plugin-stylelint';
+import typescript from '@rollup/plugin-typescript';
+import { terser } from 'rollup-plugin-terser';
+
+import sass from 'rollup-plugin-sass';
+import url from '@rollup/plugin-url';
+import eslint from '@rbnlffl/rollup-plugin-eslint';
+//import stylelint from 'rollup-plugin-stylelint';
 import svgr from '@svgr/rollup';
 
 /* postCSS plugins */
 import simplevars from 'postcss-simple-vars';
 import nested from 'postcss-nested';
 
-import pkg from './package.json';
+import packageJson from './package.json';
 
 export default {
-  input: 'src/index.js',
+  input: 'src/index.ts',
   output: [
     {
-      file: pkg.main,
+      file: packageJson.main,
       format: 'cjs',
-      sourcemap: true
+      sourcemap: true,
+      name: 'react-tooltip'
     },
     {
-      file: pkg.module,
-      format: 'es',
+      file: packageJson.module,
+      format: 'esm',
       sourcemap: true
     }
   ],
   plugins: [
-    external(),
     eslint({
-      throwOnError: true,
-      throwOnWarning: true
+      throwOnError: false,
+      throwOnWarning: false
     }),
-    stylelint({
-      throwOnError: true,
-      throwOnWarning: true
-    }),
+    external(), // Automatically externalize peerDependencies in a rollup bundle.
+    typescript(),
+    commonjs(),
+
+    // stylelint({
+    //   throwOnError: false,
+    //   throwOnWarning: false
+    // }),
     postcss({
       plugins: [simplevars(), nested()],
       modules: true
     }),
-    sass({ insert: false }),
+    sass({ insert: false }), // will output compiled styles to output.css
     url(),
     svgr(),
-    babel({
-      exclude: 'node_modules/**'
-    }),
-    resolve(),
-    commonjs()
+    terser({
+      mangle: false
+    }) // minify es bundle
   ],
   external: ['prop-types', 'uuid']
 };
