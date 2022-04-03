@@ -1,213 +1,184 @@
 # [4.3.0-alpha.1](https://github.com/CodeForked/react-tooltip/compare/v4.2.21...v4.3.0-alpha.1) (2022-04-03)
 
-
 ### Bug Fixes
 
-* **aftershow:** call afterShow only after state has fully updated ([54752e8](https://github.com/CodeForked/react-tooltip/commit/54752e81093f4c41bae1b49f7de65f28cf54df1a))
-* effect and type not properly applied at first render ([a8d0e51](https://github.com/CodeForked/react-tooltip/commit/a8d0e51dd5dc0eb85d985232da90d54fd031ae4b))
-* performance issue caused by excessive use of clearTimeout/Interval ([22aea50](https://github.com/CodeForked/react-tooltip/commit/22aea5086db47727feae609bb7a6f8e269b7f2de))
-* set aria-describedby value wrong when custom id ([a04d26c](https://github.com/CodeForked/react-tooltip/commit/a04d26cc0639054b474ca8b373c95a09b199973a))
+- **aftershow:** call afterShow only after state has fully updated ([54752e8](https://github.com/CodeForked/react-tooltip/commit/54752e81093f4c41bae1b49f7de65f28cf54df1a))
+- effect and type not properly applied at first render ([a8d0e51](https://github.com/CodeForked/react-tooltip/commit/a8d0e51dd5dc0eb85d985232da90d54fd031ae4b))
+- performance issue caused by excessive use of clearTimeout/Interval ([22aea50](https://github.com/CodeForked/react-tooltip/commit/22aea5086db47727feae609bb7a6f8e269b7f2de))
+- set aria-describedby value wrong when custom id ([a04d26c](https://github.com/CodeForked/react-tooltip/commit/a04d26cc0639054b474ca8b373c95a09b199973a))
+- add aria hidden attribute to style tag ([#703](https://github.com/CodeForked/react-tooltip/issues/703)) ([d60c2b7](https://github.com/CodeForked/react-tooltip/commit/d60c2b703a949fbe48e8acf56e741ffbfef233f6))
+- **aftershow:** call afterShow only after state has fully updated ([54752e8](https://github.com/CodeForked/react-tooltip/commit/54752e81093f4c41bae1b49f7de65f28cf54df1a))
+- **aphrodite_jss_deprecation:** aphrodite_jss replaced with custom solution ([fcdf7f1](https://github.com/CodeForked/react-tooltip/commit/fcdf7f156a665c2028d4db635b4ac9996bf44b29))
+- **aphrodite_jss_deprecation:** aphrodite_jss replaced with custom solution ([92fcf5b](https://github.com/CodeForked/react-tooltip/commit/92fcf5bc62e39c27809b280c7ae095a2a9f12857))
+- **build:** removing single quotes on cpy for windows shell ([#632](https://github.com/CodeForked/react-tooltip/issues/632)) ([9c280af](https://github.com/CodeForked/react-tooltip/commit/9c280af1bd651de42cd6d4417169db84534ba4ab))
+- **colors:** allow customizable text, background, border, arrow colors ([9a85253](https://github.com/CodeForked/react-tooltip/commit/9a85253a902bcccb530483d66023f11ed6ee7221))
+- **compability:** add polyfill and change styles ([#706](https://github.com/CodeForked/react-tooltip/issues/706)) ([b6e9a1c](https://github.com/CodeForked/react-tooltip/commit/b6e9a1cae81885890a791b1c31c218b6f78cb67c))
+- deleting warning in peer dependencies ([f30ae74](https://github.com/CodeForked/react-tooltip/commit/f30ae74ce911599fb5b4b3aaec05a1f264654092))
+- do not delay show if tooltip is already shown ([#676](https://github.com/CodeForked/react-tooltip/issues/676)) ([e8b9d84](https://github.com/CodeForked/react-tooltip/commit/e8b9d84c68e31a112d2ffcdfc5b322d4ec87ff8a))
+- **domexception:** revert previous changed for unexpected behavior ([85e38bb](https://github.com/CodeForked/react-tooltip/commit/85e38bbdcf7a60588924aae12fbc1da35af85de4)), closes [#667](https://github.com/CodeForked/react-tooltip/issues/667)
+- effect and type not properly applied at first render ([a8d0e51](https://github.com/CodeForked/react-tooltip/commit/a8d0e51dd5dc0eb85d985232da90d54fd031ae4b))
+- **event:** expose the original event to `afterShow` and `afterHide` ([e2f973e](https://github.com/CodeForked/react-tooltip/commit/e2f973e35e7e329b3f012ca79744a4745ad200f9))
+- **example:** 'made dev' works again, small fixes. ([7b286bb](https://github.com/CodeForked/react-tooltip/commit/7b286bbbc8853568ca8e9897235a2de2f202ff55)), closes [#328](https://github.com/CodeForked/react-tooltip/issues/328) [#341](https://github.com/CodeForked/react-tooltip/issues/341)
+- **example:** <p> warning from react, make text match code. ([7c4c979](https://github.com/CodeForked/react-tooltip/commit/7c4c97904572b37d0fbf675d855ad6600004d54e))
+- **examples:** add SVG example ([72a98d7](https://github.com/CodeForked/react-tooltip/commit/72a98d7fb15b9ff6b058bb8b158d112d7ea81316))
+- fix ie edge CustomEvent bug ([#567](https://github.com/CodeForked/react-tooltip/issues/567)) ([b7f04f7](https://github.com/CodeForked/react-tooltip/commit/b7f04f767e66df3e3f2d9d85a482e4b3d8c2d1c2)), closes [#498](https://github.com/CodeForked/react-tooltip/issues/498)
+- **getPosition Util:** Remove shouldUpdatePlace check from position check ([1f8a054](https://github.com/CodeForked/react-tooltip/commit/1f8a0542435003a11a8c6931431d393c0a350332)), closes [#574](https://github.com/CodeForked/react-tooltip/issues/574)
+- **getposition:** properly determine parents with will-change: transform ([3a76250](https://github.com/CodeForked/react-tooltip/commit/3a76250a228d1a37bb9a8e56e7738954777dc2dd))
+- **getPosition:** updated getPosition to fix 'maximum update depth' ([8fda305](https://github.com/CodeForked/react-tooltip/commit/8fda3058b880eff6771a1ef1537013ae18996fe4))
+- **githubPage:** updating github page build in travis ([87b810a](https://github.com/CodeForked/react-tooltip/commit/87b810a5d0e4caf8fec6503e1bdfa7e765885d9b))
+- **html:** remove sanitize-html-react, reduce package size ([177ac11](https://github.com/CodeForked/react-tooltip/commit/177ac1166a9b07953d8e2ad6e70ae4c01d00f3e2)), closes [#429](https://github.com/CodeForked/react-tooltip/issues/429)
+- **index.js:** add missing argument so tooltip hides. ([4d3661b](https://github.com/CodeForked/react-tooltip/commit/4d3661b21e992a361f8df9a63cca4bea634611bf))
+- **index.js:** fix exception when testing with Jest ([#682](https://github.com/CodeForked/react-tooltip/issues/682)) ([f885f1f](https://github.com/CodeForked/react-tooltip/commit/f885f1f97541954e7f6d8060ddda2a8f1ceb2876))
+- **index.js:** fix state initialization ([69dea07](https://github.com/CodeForked/react-tooltip/commit/69dea07559f4eb5f03b05116f2e8a574917b61dd))
+- **index.js:** Replaced the deprecated `componentWillReceiveProps`. ([80b71ed](https://github.com/CodeForked/react-tooltip/commit/80b71edf184bfa688cac0686c20e387768e3cbf1))
+- **index.js:** Use correct orientation when mouse enters ([4a0da8b](https://github.com/CodeForked/react-tooltip/commit/4a0da8b4f6ad27810f10370bf1d3b129b0e5050b)), closes [#388](https://github.com/CodeForked/react-tooltip/issues/388)
+- install dependencies in example travis ([7ba8b28](https://github.com/CodeForked/react-tooltip/commit/7ba8b28f672b2ca3fc9f5fbe860ec975f10fa0bb))
+- **isCapture:** better guard that preserves logic ([28b8493](https://github.com/CodeForked/react-tooltip/commit/28b84938c9fc7da12d5936c687c3d391817fbd1c))
+- **isCapture:** guard use of currentTarget ([4f89a2d](https://github.com/CodeForked/react-tooltip/commit/4f89a2d685889785bf62e71f737c45d9d55b1e48))
+- **lint:** styles are now linted with stylelint ([3c17198](https://github.com/CodeForked/react-tooltip/commit/3c17198fa9ce04c8fa07858f4544af21c07d2104))
+- made it possible to pass uuid instead of generating one internally ([#583](https://github.com/CodeForked/react-tooltip/issues/583)) ([083edfb](https://github.com/CodeForked/react-tooltip/commit/083edfb91d532d5880562c0510845081ef7463b0)), closes [#580](https://github.com/CodeForked/react-tooltip/issues/580)
+- mark prop-types and uuid as external to avoid bundling them ([#582](https://github.com/CodeForked/react-tooltip/issues/582)) ([fb60855](https://github.com/CodeForked/react-tooltip/commit/fb6085598d0249f35a505edee6904fd79a5f8b5e))
+- modifying example ([9dc0b2e](https://github.com/CodeForked/react-tooltip/commit/9dc0b2ec74ae62270e50c692bce2614bfd61eacf))
+- **no_var:** no vars allowed ([c591804](https://github.com/CodeForked/react-tooltip/commit/c591804d028ca086f226ee43ef9a0a8e525c1bfc))
+- **overridePosition:** providing currentEvent in overridePosition ([#563](https://github.com/CodeForked/react-tooltip/issues/563)) ([3e75a09](https://github.com/CodeForked/react-tooltip/commit/3e75a098a2ab2ad08ac1965440d6b236aad21a5f)), closes [#513](https://github.com/CodeForked/react-tooltip/issues/513)
+- performance issue caused by excessive use of clearTimeout/Interval ([22aea50](https://github.com/CodeForked/react-tooltip/commit/22aea5086db47727feae609bb7a6f8e269b7f2de))
+- providing currentTarget in overridePosition ([#564](https://github.com/CodeForked/react-tooltip/issues/564)) ([22c3bac](https://github.com/CodeForked/react-tooltip/commit/22c3bacfea3746b4b3aeeb39ccdc7559148811e0))
+- **pr:** package.json fix; refactoring to exclude dependencies ([fdc17d4](https://github.com/CodeForked/react-tooltip/commit/fdc17d44f1b22f640f7a87ffdf515e72035ef78a))
+- release event listners ([#534](https://github.com/CodeForked/react-tooltip/issues/534)) ([7cc1203](https://github.com/CodeForked/react-tooltip/commit/7cc12039a1646cc19b063f80382c661a6d7ef2ec))
+- **selector:** Add support for shadow DOM elements ([99be4d1](https://github.com/CodeForked/react-tooltip/commit/99be4d17b77e7f9cc8a74b818dacbf6b41f33dcf))
+- **selector:** lint fixes ([873c2a8](https://github.com/CodeForked/react-tooltip/commit/873c2a8be03dc59dec712f09b04fe88edddcf1ca))
+- set aria-describedby value wrong when custom id ([a04d26c](https://github.com/CodeForked/react-tooltip/commit/a04d26cc0639054b474ca8b373c95a09b199973a))
+- **showtooltip:** check if tooltipRef is undefined ([#623](https://github.com/CodeForked/react-tooltip/issues/623)) ([f63eab2](https://github.com/CodeForked/react-tooltip/commit/f63eab2ccca5ef1182e9e7c3e1271165fd4e5b4a))
+- skip warning in example ([a555060](https://github.com/CodeForked/react-tooltip/commit/a555060cd9e208e5af64148f8d8e84523a5d785e))
+- **src/index.js:** add accessibility support for tabbing ([#695](https://github.com/CodeForked/react-tooltip/issues/695)) ([ae936a5](https://github.com/CodeForked/react-tooltip/commit/ae936a5275ee4a2cf32a84dbf8dc004e20b748e1))
+- **src/index.js:** hide tooltip if blurred (tabbed out) ([#699](https://github.com/CodeForked/react-tooltip/issues/699)) ([e0a2a1d](https://github.com/CodeForked/react-tooltip/commit/e0a2a1d0351491396defc528f253f80c7806bf42))
+- **src/index.js:** Overwrite `delayHide` on scroll ([7a2d0b3](https://github.com/CodeForked/react-tooltip/commit/7a2d0b365e0fd901b3b15b2a154a99b76f78d9ef)), closes [#474](https://github.com/CodeForked/react-tooltip/issues/474)
+- **staticMethods:** fixing IE event bug ([#569](https://github.com/CodeForked/react-tooltip/issues/569)) ([9acc591](https://github.com/CodeForked/react-tooltip/commit/9acc5919de80208da98893d9f2fc32bd0a261410))
+- string into example ([356821b](https://github.com/CodeForked/react-tooltip/commit/356821b1be23321bea29be1e6895595a753881c0))
+- **style injection:** change style injection default root ([a00c5b7](https://github.com/CodeForked/react-tooltip/commit/a00c5b76c4e7fb56f27461c34ed3511b45ba8236)), closes [#665](https://github.com/CodeForked/react-tooltip/issues/665)
+- **styles:** add styles for shadow dom ([00d1539](https://github.com/CodeForked/react-tooltip/commit/00d1539f427fc06f154fcbd19b83fd236c801917)), closes [#597](https://github.com/CodeForked/react-tooltip/issues/597)
+- **styles:** change style injection way ([#668](https://github.com/CodeForked/react-tooltip/issues/668)) ([1e10cce](https://github.com/CodeForked/react-tooltip/commit/1e10ccee4f79f27b98c53632412b81fbc890c9a7)), closes [#650](https://github.com/CodeForked/react-tooltip/issues/650)
+- **tooltip:** sanitize HTML to prevent XSS ([182df11](https://github.com/CodeForked/react-tooltip/commit/182df112be16720d238daae177af451525dcf8f7))
+- **type:** added role property to types ([#679](https://github.com/CodeForked/react-tooltip/issues/679)) ([9b49395](https://github.com/CodeForked/react-tooltip/commit/9b493958d20cbaa18c2e494c5d0ca30a32aa05bf))
+- **type:** Fix global method parameter type ([#585](https://github.com/CodeForked/react-tooltip/issues/585)) ([5e2b8db](https://github.com/CodeForked/react-tooltip/commit/5e2b8db3a196f2ebd413c5f43a433e187255cf19))
+- **types:** adding types filename to package ([#579](https://github.com/CodeForked/react-tooltip/issues/579)) ([05d8de2](https://github.com/CodeForked/react-tooltip/commit/05d8de2043f938c83750010c897d09ee05e6cbe2))
+- **types:** adding typescript d.ts file into dist ([e6300f7](https://github.com/CodeForked/react-tooltip/commit/e6300f75e47b57fc11efbeadb858111b1cfc54df)), closes [#579](https://github.com/CodeForked/react-tooltip/issues/579)
+- update uuid module ([d937e59](https://github.com/CodeForked/react-tooltip/commit/d937e59be19dd53abb2c8087ef333c906131382e))
+- updating styles using transferSas ([f2f7804](https://github.com/CodeForked/react-tooltip/commit/f2f78043556c284ff134b9b32424758257d7a6b7))
+- using css into example ([7d343af](https://github.com/CodeForked/react-tooltip/commit/7d343af41b6eb6413f8dc7375b3d6391152e3778))
+- using sass styles with rollup ([bb6fe48](https://github.com/CodeForked/react-tooltip/commit/bb6fe48ed3ed0bc42588422d2985812a4bebe95a))
+- **uuid:** Use uuid package for unique class names ([#566](https://github.com/CodeForked/react-tooltip/issues/566)) ([c2c2243](https://github.com/CodeForked/react-tooltip/commit/c2c2243f2c6770dfc9f4099b28c5e46348caaea5))
+- validate lint in pretest ([ad7add0](https://github.com/CodeForked/react-tooltip/commit/ad7add0460325b5c425cd477930f5d9b0d6ffbc3))
 
+- Merge pull request #550 from wwayne/refactoring ([4609833](https://github.com/CodeForked/react-tooltip/commit/4609833b80bf25559857de00101c7ea37230267d)), closes [#550](https://github.com/CodeForked/react-tooltip/issues/550)
 
 ### Features
 
-* **component:** adding "padding" property to customize padding style ([9ae765a](https://github.com/CodeForked/react-tooltip/commit/9ae765a3cc38b36ce5ea77edd8fcc0f7bd9646a6))
-* convert to typescript ([dc547c1](https://github.com/CodeForked/react-tooltip/commit/dc547c18a0aa202468f77ac5def6f9c982d50068))
-
-# 1.0.0-alpha.1 (2022-04-03)
-
-
-### Bug Fixes
-
-* add aria hidden attribute to style tag ([#703](https://github.com/CodeForked/react-tooltip/issues/703)) ([d60c2b7](https://github.com/CodeForked/react-tooltip/commit/d60c2b703a949fbe48e8acf56e741ffbfef233f6))
-* **aftershow:** call afterShow only after state has fully updated ([54752e8](https://github.com/CodeForked/react-tooltip/commit/54752e81093f4c41bae1b49f7de65f28cf54df1a))
-* **aphrodite_jss_deprecation:** aphrodite_jss replaced with custom solution ([fcdf7f1](https://github.com/CodeForked/react-tooltip/commit/fcdf7f156a665c2028d4db635b4ac9996bf44b29))
-* **aphrodite_jss_deprecation:** aphrodite_jss replaced with custom solution ([92fcf5b](https://github.com/CodeForked/react-tooltip/commit/92fcf5bc62e39c27809b280c7ae095a2a9f12857))
-* **build:** removing single quotes on cpy for windows shell ([#632](https://github.com/CodeForked/react-tooltip/issues/632)) ([9c280af](https://github.com/CodeForked/react-tooltip/commit/9c280af1bd651de42cd6d4417169db84534ba4ab))
-* **colors:** allow customizable text, background, border, arrow colors ([9a85253](https://github.com/CodeForked/react-tooltip/commit/9a85253a902bcccb530483d66023f11ed6ee7221))
-* **compability:** add polyfill and change styles ([#706](https://github.com/CodeForked/react-tooltip/issues/706)) ([b6e9a1c](https://github.com/CodeForked/react-tooltip/commit/b6e9a1cae81885890a791b1c31c218b6f78cb67c))
-* deleting warning in peer dependencies ([f30ae74](https://github.com/CodeForked/react-tooltip/commit/f30ae74ce911599fb5b4b3aaec05a1f264654092))
-* do not delay show if tooltip is already shown ([#676](https://github.com/CodeForked/react-tooltip/issues/676)) ([e8b9d84](https://github.com/CodeForked/react-tooltip/commit/e8b9d84c68e31a112d2ffcdfc5b322d4ec87ff8a))
-* **domexception:** revert previous changed for unexpected behavior ([85e38bb](https://github.com/CodeForked/react-tooltip/commit/85e38bbdcf7a60588924aae12fbc1da35af85de4)), closes [#667](https://github.com/CodeForked/react-tooltip/issues/667)
-* effect and type not properly applied at first render ([a8d0e51](https://github.com/CodeForked/react-tooltip/commit/a8d0e51dd5dc0eb85d985232da90d54fd031ae4b))
-* **event:** expose the original event to `afterShow` and `afterHide` ([e2f973e](https://github.com/CodeForked/react-tooltip/commit/e2f973e35e7e329b3f012ca79744a4745ad200f9))
-* **example:** 'made dev' works again, small fixes. ([7b286bb](https://github.com/CodeForked/react-tooltip/commit/7b286bbbc8853568ca8e9897235a2de2f202ff55)), closes [#328](https://github.com/CodeForked/react-tooltip/issues/328) [#341](https://github.com/CodeForked/react-tooltip/issues/341)
-* **example:** <p> warning from react, make text match code. ([7c4c979](https://github.com/CodeForked/react-tooltip/commit/7c4c97904572b37d0fbf675d855ad6600004d54e))
-* **examples:** add SVG example ([72a98d7](https://github.com/CodeForked/react-tooltip/commit/72a98d7fb15b9ff6b058bb8b158d112d7ea81316))
-* fix ie edge CustomEvent bug ([#567](https://github.com/CodeForked/react-tooltip/issues/567)) ([b7f04f7](https://github.com/CodeForked/react-tooltip/commit/b7f04f767e66df3e3f2d9d85a482e4b3d8c2d1c2)), closes [#498](https://github.com/CodeForked/react-tooltip/issues/498)
-* **getPosition Util:** Remove shouldUpdatePlace check from position check ([1f8a054](https://github.com/CodeForked/react-tooltip/commit/1f8a0542435003a11a8c6931431d393c0a350332)), closes [#574](https://github.com/CodeForked/react-tooltip/issues/574)
-* **getposition:** properly determine parents with will-change: transform ([3a76250](https://github.com/CodeForked/react-tooltip/commit/3a76250a228d1a37bb9a8e56e7738954777dc2dd))
-* **getPosition:** updated getPosition to fix 'maximum update depth' ([8fda305](https://github.com/CodeForked/react-tooltip/commit/8fda3058b880eff6771a1ef1537013ae18996fe4))
-* **githubPage:** updating github page build in travis ([87b810a](https://github.com/CodeForked/react-tooltip/commit/87b810a5d0e4caf8fec6503e1bdfa7e765885d9b))
-* **html:** remove sanitize-html-react, reduce package size ([177ac11](https://github.com/CodeForked/react-tooltip/commit/177ac1166a9b07953d8e2ad6e70ae4c01d00f3e2)), closes [#429](https://github.com/CodeForked/react-tooltip/issues/429)
-* **index.js:** add missing argument so tooltip hides. ([4d3661b](https://github.com/CodeForked/react-tooltip/commit/4d3661b21e992a361f8df9a63cca4bea634611bf))
-* **index.js:** fix exception when testing with Jest ([#682](https://github.com/CodeForked/react-tooltip/issues/682)) ([f885f1f](https://github.com/CodeForked/react-tooltip/commit/f885f1f97541954e7f6d8060ddda2a8f1ceb2876))
-* **index.js:** fix state initialization ([69dea07](https://github.com/CodeForked/react-tooltip/commit/69dea07559f4eb5f03b05116f2e8a574917b61dd))
-* **index.js:** Replaced the deprecated `componentWillReceiveProps`. ([80b71ed](https://github.com/CodeForked/react-tooltip/commit/80b71edf184bfa688cac0686c20e387768e3cbf1))
-* **index.js:** Use correct orientation when mouse enters ([4a0da8b](https://github.com/CodeForked/react-tooltip/commit/4a0da8b4f6ad27810f10370bf1d3b129b0e5050b)), closes [#388](https://github.com/CodeForked/react-tooltip/issues/388)
-* install dependencies in example travis ([7ba8b28](https://github.com/CodeForked/react-tooltip/commit/7ba8b28f672b2ca3fc9f5fbe860ec975f10fa0bb))
-* **isCapture:** better guard that preserves logic ([28b8493](https://github.com/CodeForked/react-tooltip/commit/28b84938c9fc7da12d5936c687c3d391817fbd1c))
-* **isCapture:** guard use of currentTarget ([4f89a2d](https://github.com/CodeForked/react-tooltip/commit/4f89a2d685889785bf62e71f737c45d9d55b1e48))
-* **lint:** styles are now linted with stylelint ([3c17198](https://github.com/CodeForked/react-tooltip/commit/3c17198fa9ce04c8fa07858f4544af21c07d2104))
-* made it possible to pass uuid instead of generating one internally ([#583](https://github.com/CodeForked/react-tooltip/issues/583)) ([083edfb](https://github.com/CodeForked/react-tooltip/commit/083edfb91d532d5880562c0510845081ef7463b0)), closes [#580](https://github.com/CodeForked/react-tooltip/issues/580)
-* mark prop-types and uuid as external to avoid bundling them ([#582](https://github.com/CodeForked/react-tooltip/issues/582)) ([fb60855](https://github.com/CodeForked/react-tooltip/commit/fb6085598d0249f35a505edee6904fd79a5f8b5e))
-* modifying example ([9dc0b2e](https://github.com/CodeForked/react-tooltip/commit/9dc0b2ec74ae62270e50c692bce2614bfd61eacf))
-* **no_var:** no vars allowed ([c591804](https://github.com/CodeForked/react-tooltip/commit/c591804d028ca086f226ee43ef9a0a8e525c1bfc))
-* **overridePosition:** providing currentEvent in overridePosition ([#563](https://github.com/CodeForked/react-tooltip/issues/563)) ([3e75a09](https://github.com/CodeForked/react-tooltip/commit/3e75a098a2ab2ad08ac1965440d6b236aad21a5f)), closes [#513](https://github.com/CodeForked/react-tooltip/issues/513)
-* performance issue caused by excessive use of clearTimeout/Interval ([22aea50](https://github.com/CodeForked/react-tooltip/commit/22aea5086db47727feae609bb7a6f8e269b7f2de))
-* providing currentTarget in overridePosition ([#564](https://github.com/CodeForked/react-tooltip/issues/564)) ([22c3bac](https://github.com/CodeForked/react-tooltip/commit/22c3bacfea3746b4b3aeeb39ccdc7559148811e0))
-* **pr:** package.json fix; refactoring to exclude dependencies ([fdc17d4](https://github.com/CodeForked/react-tooltip/commit/fdc17d44f1b22f640f7a87ffdf515e72035ef78a))
-* release event listners ([#534](https://github.com/CodeForked/react-tooltip/issues/534)) ([7cc1203](https://github.com/CodeForked/react-tooltip/commit/7cc12039a1646cc19b063f80382c661a6d7ef2ec))
-* **selector:** Add support for shadow DOM elements ([99be4d1](https://github.com/CodeForked/react-tooltip/commit/99be4d17b77e7f9cc8a74b818dacbf6b41f33dcf))
-* **selector:** lint fixes ([873c2a8](https://github.com/CodeForked/react-tooltip/commit/873c2a8be03dc59dec712f09b04fe88edddcf1ca))
-* set aria-describedby value wrong when custom id ([a04d26c](https://github.com/CodeForked/react-tooltip/commit/a04d26cc0639054b474ca8b373c95a09b199973a))
-* **showtooltip:** check if tooltipRef is undefined ([#623](https://github.com/CodeForked/react-tooltip/issues/623)) ([f63eab2](https://github.com/CodeForked/react-tooltip/commit/f63eab2ccca5ef1182e9e7c3e1271165fd4e5b4a))
-* skip warning in example ([a555060](https://github.com/CodeForked/react-tooltip/commit/a555060cd9e208e5af64148f8d8e84523a5d785e))
-* **src/index.js:** add accessibility support for tabbing ([#695](https://github.com/CodeForked/react-tooltip/issues/695)) ([ae936a5](https://github.com/CodeForked/react-tooltip/commit/ae936a5275ee4a2cf32a84dbf8dc004e20b748e1))
-* **src/index.js:** hide tooltip if blurred (tabbed out) ([#699](https://github.com/CodeForked/react-tooltip/issues/699)) ([e0a2a1d](https://github.com/CodeForked/react-tooltip/commit/e0a2a1d0351491396defc528f253f80c7806bf42))
-* **src/index.js:** Overwrite `delayHide` on scroll ([7a2d0b3](https://github.com/CodeForked/react-tooltip/commit/7a2d0b365e0fd901b3b15b2a154a99b76f78d9ef)), closes [#474](https://github.com/CodeForked/react-tooltip/issues/474)
-* **staticMethods:** fixing IE event bug ([#569](https://github.com/CodeForked/react-tooltip/issues/569)) ([9acc591](https://github.com/CodeForked/react-tooltip/commit/9acc5919de80208da98893d9f2fc32bd0a261410))
-* string into example ([356821b](https://github.com/CodeForked/react-tooltip/commit/356821b1be23321bea29be1e6895595a753881c0))
-* **style injection:** change style injection default root ([a00c5b7](https://github.com/CodeForked/react-tooltip/commit/a00c5b76c4e7fb56f27461c34ed3511b45ba8236)), closes [#665](https://github.com/CodeForked/react-tooltip/issues/665)
-* **styles:** add styles for shadow dom ([00d1539](https://github.com/CodeForked/react-tooltip/commit/00d1539f427fc06f154fcbd19b83fd236c801917)), closes [#597](https://github.com/CodeForked/react-tooltip/issues/597)
-* **styles:** change style injection way ([#668](https://github.com/CodeForked/react-tooltip/issues/668)) ([1e10cce](https://github.com/CodeForked/react-tooltip/commit/1e10ccee4f79f27b98c53632412b81fbc890c9a7)), closes [#650](https://github.com/CodeForked/react-tooltip/issues/650)
-* **tooltip:** sanitize HTML to prevent XSS ([182df11](https://github.com/CodeForked/react-tooltip/commit/182df112be16720d238daae177af451525dcf8f7))
-* **type:** added role property to types ([#679](https://github.com/CodeForked/react-tooltip/issues/679)) ([9b49395](https://github.com/CodeForked/react-tooltip/commit/9b493958d20cbaa18c2e494c5d0ca30a32aa05bf))
-* **type:** Fix global method parameter type ([#585](https://github.com/CodeForked/react-tooltip/issues/585)) ([5e2b8db](https://github.com/CodeForked/react-tooltip/commit/5e2b8db3a196f2ebd413c5f43a433e187255cf19))
-* **types:** adding types filename to package ([#579](https://github.com/CodeForked/react-tooltip/issues/579)) ([05d8de2](https://github.com/CodeForked/react-tooltip/commit/05d8de2043f938c83750010c897d09ee05e6cbe2))
-* **types:** adding typescript d.ts file into dist ([e6300f7](https://github.com/CodeForked/react-tooltip/commit/e6300f75e47b57fc11efbeadb858111b1cfc54df)), closes [#579](https://github.com/CodeForked/react-tooltip/issues/579)
-* update uuid module ([d937e59](https://github.com/CodeForked/react-tooltip/commit/d937e59be19dd53abb2c8087ef333c906131382e))
-* updating styles using transferSas ([f2f7804](https://github.com/CodeForked/react-tooltip/commit/f2f78043556c284ff134b9b32424758257d7a6b7))
-* using css into example ([7d343af](https://github.com/CodeForked/react-tooltip/commit/7d343af41b6eb6413f8dc7375b3d6391152e3778))
-* using sass styles with rollup ([bb6fe48](https://github.com/CodeForked/react-tooltip/commit/bb6fe48ed3ed0bc42588422d2985812a4bebe95a))
-* **uuid:** Use uuid package for unique class names ([#566](https://github.com/CodeForked/react-tooltip/issues/566)) ([c2c2243](https://github.com/CodeForked/react-tooltip/commit/c2c2243f2c6770dfc9f4099b28c5e46348caaea5))
-* validate lint in pretest ([ad7add0](https://github.com/CodeForked/react-tooltip/commit/ad7add0460325b5c425cd477930f5d9b0d6ffbc3))
-
-
-* Merge pull request #550 from wwayne/refactoring ([4609833](https://github.com/CodeForked/react-tooltip/commit/4609833b80bf25559857de00101c7ea37230267d)), closes [#550](https://github.com/CodeForked/react-tooltip/issues/550)
-
-
-### Features
-
-* adding typescript type defs ([#571](https://github.com/CodeForked/react-tooltip/issues/571)) ([cb2b921](https://github.com/CodeForked/react-tooltip/commit/cb2b921acf25f180d18f55f90a0375ca941fdf16))
-* **clickable-prop:** add clickable prop ([a75b2be](https://github.com/CodeForked/react-tooltip/commit/a75b2be335defd49b9a72d9b70ebe8ffd97494d3)), closes [#417](https://github.com/CodeForked/react-tooltip/issues/417)
-* **component:** adding "padding" property to customize padding style ([9ae765a](https://github.com/CodeForked/react-tooltip/commit/9ae765a3cc38b36ce5ea77edd8fcc0f7bd9646a6))
-* convert to typescript ([dc547c1](https://github.com/CodeForked/react-tooltip/commit/dc547c18a0aa202468f77ac5def6f9c982d50068))
-* getContent(dataTip) ([8bfbfc9](https://github.com/CodeForked/react-tooltip/commit/8bfbfc960bdc62e716fd2d3f0ec6bb8c54edf01e))
-* **getContent:** update Travis, trigger semantic-release ([9617267](https://github.com/CodeForked/react-tooltip/commit/9617267c3cadd1361a32b3f900e02fc994211682))
-* **overridePosition:** Add "overridePosition" property to handle border cases and customize position ([ccb8b58](https://github.com/CodeForked/react-tooltip/commit/ccb8b58a6762f3393f7d71c157c64ae24a81674c))
-* **overridePosition:** Added example ([7df8454](https://github.com/CodeForked/react-tooltip/commit/7df845437bb8a8b4cb12e47537d5889ae0352b97))
-* Small bug fix to previous commit ([19a8a67](https://github.com/CodeForked/react-tooltip/commit/19a8a6709c8034f27c80df172c9d2e616227f258))
-* The only way to support styling react-tooltips with a strict csp is to inject the style.css di ([cf105a1](https://github.com/CodeForked/react-tooltip/commit/cf105a17665136c28eadf06e9dd4c421dac1040d)), closes [#340](https://github.com/CodeForked/react-tooltip/issues/340)
-* **tooltip:** Add ability to hover on tooltip. Provide optional delay of updating so if the mouse p ([79342ce](https://github.com/CodeForked/react-tooltip/commit/79342cec63d7c5e8b429dd1917396177b1e8ab09))
-
+- **component:** adding "padding" property to customize padding style ([9ae765a](https://github.com/CodeForked/react-tooltip/commit/9ae765a3cc38b36ce5ea77edd8fcc0f7bd9646a6))
+- convert to typescript ([dc547c1](https://github.com/CodeForked/react-tooltip/commit/dc547c18a0aa202468f77ac5def6f9c982d50068))
+- adding typescript type defs ([#571](https://github.com/CodeForked/react-tooltip/issues/571)) ([cb2b921](https://github.com/CodeForked/react-tooltip/commit/cb2b921acf25f180d18f55f90a0375ca941fdf16))
+- **clickable-prop:** add clickable prop ([a75b2be](https://github.com/CodeForked/react-tooltip/commit/a75b2be335defd49b9a72d9b70ebe8ffd97494d3)), closes [#417](https://github.com/CodeForked/react-tooltip/issues/417)
+- **component:** adding "padding" property to customize padding style ([9ae765a](https://github.com/CodeForked/react-tooltip/commit/9ae765a3cc38b36ce5ea77edd8fcc0f7bd9646a6))
+- convert to typescript ([dc547c1](https://github.com/CodeForked/react-tooltip/commit/dc547c18a0aa202468f77ac5def6f9c982d50068))
+- getContent(dataTip) ([8bfbfc9](https://github.com/CodeForked/react-tooltip/commit/8bfbfc960bdc62e716fd2d3f0ec6bb8c54edf01e))
+- **getContent:** update Travis, trigger semantic-release ([9617267](https://github.com/CodeForked/react-tooltip/commit/9617267c3cadd1361a32b3f900e02fc994211682))
+- **overridePosition:** Add "overridePosition" property to handle border cases and customize position ([ccb8b58](https://github.com/CodeForked/react-tooltip/commit/ccb8b58a6762f3393f7d71c157c64ae24a81674c))
+- **overridePosition:** Added example ([7df8454](https://github.com/CodeForked/react-tooltip/commit/7df845437bb8a8b4cb12e47537d5889ae0352b97))
+- Small bug fix to previous commit ([19a8a67](https://github.com/CodeForked/react-tooltip/commit/19a8a6709c8034f27c80df172c9d2e616227f258))
+- The only way to support styling react-tooltips with a strict csp is to inject the style.css di ([cf105a1](https://github.com/CodeForked/react-tooltip/commit/cf105a17665136c28eadf06e9dd4c421dac1040d)), closes [#340](https://github.com/CodeForked/react-tooltip/issues/340)
+- **tooltip:** Add ability to hover on tooltip. Provide optional delay of updating so if the mouse p ([79342ce](https://github.com/CodeForked/react-tooltip/commit/79342cec63d7c5e8b429dd1917396177b1e8ab09))
 
 ### Performance Improvements
 
-* **Use sanitize-html-react instead of sanitize-html to avoid useless server side dependencies:** Us ([4b84caa](https://github.com/CodeForked/react-tooltip/commit/4b84caa096f7c562a8374abf63b23794124cd8fe)), closes [#424](https://github.com/CodeForked/react-tooltip/issues/424)
-
+- **Use sanitize-html-react instead of sanitize-html to avoid useless server side dependencies:** Us ([4b84caa](https://github.com/CodeForked/react-tooltip/commit/4b84caa096f7c562a8374abf63b23794124cd8fe)), closes [#424](https://github.com/CodeForked/react-tooltip/issues/424)
 
 ### BREAKING CHANGES
 
-* Updating readme for demo
+- Updating readme for demo
 
 ## [4.2.21](https://github.com/wwayne/react-tooltip/compare/v4.2.20...v4.2.21) (2021-05-28)
 
-
 ### Bug Fixes
 
-* **compability:** add polyfill and change styles ([#706](https://github.com/wwayne/react-tooltip/issues/706)) ([b6e9a1c](https://github.com/wwayne/react-tooltip/commit/b6e9a1c))
+- **compability:** add polyfill and change styles ([#706](https://github.com/wwayne/react-tooltip/issues/706)) ([b6e9a1c](https://github.com/wwayne/react-tooltip/commit/b6e9a1c))
 
 ## [4.2.20](https://github.com/wwayne/react-tooltip/compare/v4.2.19...v4.2.20) (2021-05-28)
 
-
 ### Bug Fixes
 
-* add aria hidden attribute to style tag ([#703](https://github.com/wwayne/react-tooltip/issues/703)) ([d60c2b7](https://github.com/wwayne/react-tooltip/commit/d60c2b7))
+- add aria hidden attribute to style tag ([#703](https://github.com/wwayne/react-tooltip/issues/703)) ([d60c2b7](https://github.com/wwayne/react-tooltip/commit/d60c2b7))
 
 ## [4.2.19](https://github.com/wwayne/react-tooltip/compare/v4.2.18...v4.2.19) (2021-05-06)
 
-
 ### Bug Fixes
 
-* **src/index.js:** hide tooltip if blurred (tabbed out) ([#699](https://github.com/wwayne/react-tooltip/issues/699)) ([e0a2a1d](https://github.com/wwayne/react-tooltip/commit/e0a2a1d))
+- **src/index.js:** hide tooltip if blurred (tabbed out) ([#699](https://github.com/wwayne/react-tooltip/issues/699)) ([e0a2a1d](https://github.com/wwayne/react-tooltip/commit/e0a2a1d))
 
 ## [4.2.18](https://github.com/wwayne/react-tooltip/compare/v4.2.17...v4.2.18) (2021-04-25)
 
-
 ### Bug Fixes
 
-* **src/index.js:** add accessibility support for tabbing ([#695](https://github.com/wwayne/react-tooltip/issues/695)) ([ae936a5](https://github.com/wwayne/react-tooltip/commit/ae936a5))
+- **src/index.js:** add accessibility support for tabbing ([#695](https://github.com/wwayne/react-tooltip/issues/695)) ([ae936a5](https://github.com/wwayne/react-tooltip/commit/ae936a5))
 
 ## [4.2.17](https://github.com/wwayne/react-tooltip/compare/v4.2.16...v4.2.17) (2021-03-26)
 
-
 ### Bug Fixes
 
-* **type:** added role property to types ([#679](https://github.com/wwayne/react-tooltip/issues/679)) ([9b49395](https://github.com/wwayne/react-tooltip/commit/9b49395))
+- **type:** added role property to types ([#679](https://github.com/wwayne/react-tooltip/issues/679)) ([9b49395](https://github.com/wwayne/react-tooltip/commit/9b49395))
 
 ## [4.2.16](https://github.com/wwayne/react-tooltip/compare/v4.2.15...v4.2.16) (2021-03-26)
 
-
 ### Bug Fixes
 
-* **index.js:** fix exception when testing with Jest ([#682](https://github.com/wwayne/react-tooltip/issues/682)) ([f885f1f](https://github.com/wwayne/react-tooltip/commit/f885f1f))
+- **index.js:** fix exception when testing with Jest ([#682](https://github.com/wwayne/react-tooltip/issues/682)) ([f885f1f](https://github.com/wwayne/react-tooltip/commit/f885f1f))
 
 ## [4.2.15](https://github.com/wwayne/react-tooltip/compare/v4.2.14...v4.2.15) (2021-02-26)
 
-
 ### Bug Fixes
 
-* do not delay show if tooltip is already shown ([#676](https://github.com/wwayne/react-tooltip/issues/676)) ([e8b9d84](https://github.com/wwayne/react-tooltip/commit/e8b9d84))
+- do not delay show if tooltip is already shown ([#676](https://github.com/wwayne/react-tooltip/issues/676)) ([e8b9d84](https://github.com/wwayne/react-tooltip/commit/e8b9d84))
 
 ## [4.2.14](https://github.com/wwayne/react-tooltip/compare/v4.2.13...v4.2.14) (2021-02-16)
 
-
 ### Bug Fixes
 
-* **styles:** change style injection way ([#668](https://github.com/wwayne/react-tooltip/issues/668)) ([1e10cce](https://github.com/wwayne/react-tooltip/commit/1e10cce)), closes [#650](https://github.com/wwayne/react-tooltip/issues/650)
+- **styles:** change style injection way ([#668](https://github.com/wwayne/react-tooltip/issues/668)) ([1e10cce](https://github.com/wwayne/react-tooltip/commit/1e10cce)), closes [#650](https://github.com/wwayne/react-tooltip/issues/650)
 
 ## [4.2.13](https://github.com/wwayne/react-tooltip/compare/v4.2.12...v4.2.13) (2021-01-15)
 
-
 ### Bug Fixes
 
-* **domexception:** revert previous changed for unexpected behavior ([85e38bb](https://github.com/wwayne/react-tooltip/commit/85e38bb)), closes [#667](https://github.com/wwayne/react-tooltip/issues/667)
+- **domexception:** revert previous changed for unexpected behavior ([85e38bb](https://github.com/wwayne/react-tooltip/commit/85e38bb)), closes [#667](https://github.com/wwayne/react-tooltip/issues/667)
 
 ## [4.2.12](https://github.com/wwayne/react-tooltip/compare/v4.2.11...v4.2.12) (2021-01-14)
 
-
 ### Bug Fixes
 
-* **style injection:** change style injection default root ([a00c5b7](https://github.com/wwayne/react-tooltip/commit/a00c5b7)), closes [#665](https://github.com/wwayne/react-tooltip/issues/665)
+- **style injection:** change style injection default root ([a00c5b7](https://github.com/wwayne/react-tooltip/commit/a00c5b7)), closes [#665](https://github.com/wwayne/react-tooltip/issues/665)
 
 ## [4.2.11](https://github.com/wwayne/react-tooltip/compare/v4.2.10...v4.2.11) (2020-11-22)
 
-
 ### Bug Fixes
 
-* **styles:** add styles for shadow dom ([00d1539](https://github.com/wwayne/react-tooltip/commit/00d1539)), closes [#597](https://github.com/wwayne/react-tooltip/issues/597)
+- **styles:** add styles for shadow dom ([00d1539](https://github.com/wwayne/react-tooltip/commit/00d1539)), closes [#597](https://github.com/wwayne/react-tooltip/issues/597)
 
 ## [4.2.10](https://github.com/wwayne/react-tooltip/compare/v4.2.9...v4.2.10) (2020-09-14)
 
-
 ### Bug Fixes
 
-* **build:** removing single quotes on cpy for windows shell ([#632](https://github.com/wwayne/react-tooltip/issues/632)) ([9c280af](https://github.com/wwayne/react-tooltip/commit/9c280af))
+- **build:** removing single quotes on cpy for windows shell ([#632](https://github.com/wwayne/react-tooltip/issues/632)) ([9c280af](https://github.com/wwayne/react-tooltip/commit/9c280af))
 
 ## [4.2.9](https://github.com/wwayne/react-tooltip/compare/v4.2.8...v4.2.9) (2020-08-27)
 
-
 ### Bug Fixes
 
-* **getposition:** properly determine parents with will-change: transform ([3a76250](https://github.com/wwayne/react-tooltip/commit/3a76250))
+- **getposition:** properly determine parents with will-change: transform ([3a76250](https://github.com/wwayne/react-tooltip/commit/3a76250))
 
 ## [4.2.8](https://github.com/wwayne/react-tooltip/compare/v4.2.7...v4.2.8) (2020-08-06)
 
-
 ### Bug Fixes
 
-* **showtooltip:** check if tooltipRef is undefined ([#623](https://github.com/wwayne/react-tooltip/issues/623)) ([f63eab2](https://github.com/wwayne/react-tooltip/commit/f63eab2))
+- **showtooltip:** check if tooltipRef is undefined ([#623](https://github.com/wwayne/react-tooltip/issues/623)) ([f63eab2](https://github.com/wwayne/react-tooltip/commit/f63eab2))
 
 ## Change Log
 
