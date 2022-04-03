@@ -5,6 +5,7 @@
     "outDir": "./out-tsc",
     "allowJs": true,
     "target": "es2018",
+    // "types": ["node","jest"],
     "module": "esnext",
     "moduleResolution": "node",
     "noImplicitAny": false,

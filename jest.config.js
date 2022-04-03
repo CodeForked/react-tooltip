@@ -1,10 +1,18 @@
 module.exports = {
   // The root of your source code, typically /src
   // `<rootDir>` is a token Jest substitutes
-  roots: ['<rootDir>/test'],
+  roots: ['<rootDir>'],
 
-  // Jest transformations -- this adds support for TypeScript
-  // using ts-jest
+  verbose: true,
+  globals: {
+    'ts-jest': {
+      diagnostics: {
+        warnOnly: true
+      }
+    }
+  },
+
+  // Jest transformations -- this adds support for TypeScript using ts-jest
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
     '^.+\\.scss$': 'jest-scss-transform'
@@ -24,5 +32,6 @@ module.exports = {
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
 
   // Module file extensions for importing
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node']
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  preset: 'ts-jest'
 };

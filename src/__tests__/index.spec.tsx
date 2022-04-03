@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 import React from 'react';
-import ReactTooltip from '../src/index';
+import ReactTooltip from '../index';
 import { render, cleanup } from '@testing-library/react';
 import forEach from 'mocha-each';
 
