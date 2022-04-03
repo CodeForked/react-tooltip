@@ -12,17 +12,20 @@
 
 ## Overview
 
-This is aforked version of the [react-tooltip](https://github.com/wwayne/react-tooltip) from Wang Zixiao (wwayne).
+This is a fork of the [react-tooltip](https://github.com/wwayne/react-tooltip) from Wang Zixiao (wwayne).
+
+Unless there is something specific you desire I would urge you to prefer the original package over this one.
 
 Notable changes from the original package:-
 
-- source coverted to typescript
+- Source coverted to typescript
+- Fix issue with React 18 strictMode
 
 ## Demo
 
-[![Edit ReactTooltip](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/heuristic-curran-bddeu?fontsize=14&hidenavigation=1&theme=dark)
+<!-- [![Edit ReactTooltip](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/heuristic-curran-bddeu?fontsize=14&hidenavigation=1&theme=dark) -->
 
-Or see it on [Github Page](https://codeforked.github.io/react-tooltip/).
+Examples on the [Github Page](https://codeforked.github.io/react-tooltip/).
 
 ## Maintainers
 
