@@ -1,3 +1,10 @@
+# [4.3.0-alpha.3](https://github.com/CodeForked/react-tooltip/compare/v4.3.0-alpha.2...v4.3.0-alpha.3) (2022-04-03)
+
+
+### Bug Fixes
+
+* **example:** make paths to assets relative ([f685c61](https://github.com/CodeForked/react-tooltip/commit/f685c61e5225e8fca25532a9f642beb1d165f8d7))
+
 # [4.3.0-alpha.2](https://github.com/CodeForked/react-tooltip/compare/v4.3.0-alpha.1...v4.3.0-alpha.2) (2022-04-03)
 
 
