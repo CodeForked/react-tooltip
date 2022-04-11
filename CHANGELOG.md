@@ -1,3 +1,10 @@
+# [4.3.0-alpha.4](https://github.com/CodeForked/react-tooltip/compare/v4.3.0-alpha.3...v4.3.0-alpha.4) (2022-04-11)
+
+
+### Bug Fixes
+
+* release from dist folder ([ae84870](https://github.com/CodeForked/react-tooltip/commit/ae848706e89b5ab5bea11486eae4190ac4287afc))
+
 # [4.3.0-alpha.3](https://github.com/CodeForked/react-tooltip/compare/v4.3.0-alpha.2...v4.3.0-alpha.3) (2022-04-03)
 
 
