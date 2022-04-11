@@ -1,3 +1,11 @@
+# [4.3.0-alpha.5](https://github.com/CodeForked/react-tooltip/compare/v4.3.0-alpha.4...v4.3.0-alpha.5) (2022-04-11)
+
+
+### Bug Fixes
+
+* pipeline actually build package ([fadcdfe](https://github.com/CodeForked/react-tooltip/commit/fadcdfec960ebbac901bfe48ad383e464bf279f7))
+* tests src folder ([93d8006](https://github.com/CodeForked/react-tooltip/commit/93d8006f681affe5c876d871f71f629820ec3c9f))
+
 # [4.3.0-alpha.4](https://github.com/CodeForked/react-tooltip/compare/v4.3.0-alpha.3...v4.3.0-alpha.4) (2022-04-11)
 
 
