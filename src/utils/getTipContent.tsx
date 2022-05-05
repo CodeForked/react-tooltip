@@ -16,7 +16,7 @@ import React, { ReactNode } from 'react';
 export default function getTipContent(
   tip: string,
   children: ReactNode,
-  getContent,
+  getContent: any | undefined | null,
   multiline: boolean | string
 ) {
   if (children) return children;

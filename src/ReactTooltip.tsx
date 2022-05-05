@@ -3,39 +3,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CONSTANT from './constant';
 
-/* Decorators */
+/* Utils */
 import { bodyListener, findCustomEvents, getBody } from './decorators/bodyMode';
 import { getMutationObserverClass } from './decorators/trackRemoval';
-
-/* Utils */
 import getPosition from './utils/getPosition';
 import getTipContent from './utils/getTipContent';
 import { parseAria } from './utils/aria';
 import nodeListToArray from './utils/nodeListToArray';
 import { generateUUID } from './utils/uuid';
+import { checkStatus } from './decorators/customEvent';
+import { dispatchGlobalEvent } from './utils/dispatchGlobalEvent';
 
 /* CSS */
 import baseCss from './index.scss';
 import { generateTooltipStyle } from './decorators/styler';
+
 import { BodyModeListener, CustomColor } from './types';
 import { Effect, Offset, Place, TooltipProps, Wrapper } from './TooltipProps';
-import { checkStatus } from './decorators/customEvent';
-
-const dispatchGlobalEvent = (eventName, opts) => {
-  // Compatible with IE
-  // @see http://stackoverflow.com/questions/26596123/internet-explorer-9-10-11-event-constructor-doesnt-work
-  // @see https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent
-  let event;
-
-  if (typeof window.CustomEvent === 'function') {
-    event = new window.CustomEvent(eventName, { detail: opts });
-  } else {
-    event = document.createEvent('Event');
-    event.initEvent(eventName, false, true, opts);
-  }
-
-  window.dispatchEvent(event);
-};
 
 const customListeners = {
   id: '9b69f92e-d3fe-498b-b1b4-c5e63a51b0cf',
@@ -78,7 +62,7 @@ type TooltipState = {
   event: string;
   eventOff: string;
   currentEvent?: React.MouseEvent<HTMLElement>; // Current mouse event
-  currentTarget: HTMLElement | EventTarget | null; // Current target of mouse event
+  currentTarget: HTMLElement | null; // Current target of mouse event
   ariaProps: any; // aria- and role attributes
   isEmptyTip: boolean;
   disable: boolean;
@@ -292,7 +276,7 @@ class ReactTooltip extends React.Component<TooltipProps, TooltipState> {
     for (const event in customEvents) {
       listeners[event] = bodyListener.bind(
         this,
-        (e) => {
+        (e: React.MouseEvent<HTMLElement>) => {
           const targetEventOff =
             e.currentTarget.getAttribute('data-event-off') || eventOff;
           checkStatus.call(this, targetEventOff, e);
@@ -310,7 +294,7 @@ class ReactTooltip extends React.Component<TooltipProps, TooltipState> {
     }
   }
 
-  unbindBodyListener(body?) {
+  unbindBodyListener(body?: HTMLBodyElement) {
     body = body || getBody();
 
     const listeners = this.bodyModeListeners;
@@ -348,12 +332,12 @@ class ReactTooltip extends React.Component<TooltipProps, TooltipState> {
     };
   }
 
-  isCustomEvent(ele) {
+  isCustomEvent(ele: HTMLElement) {
     const { event } = this.state;
     return event || !!ele.getAttribute('data-event');
   }
 
-  customBindListener(ele) {
+  customBindListener(ele: HTMLElement) {
     const { event, eventOff } = this.state;
     const dataEvent = ele.getAttribute('data-event') || event;
     const dataEventOff = ele.getAttribute('data-event-off') || eventOff;
@@ -372,7 +356,7 @@ class ReactTooltip extends React.Component<TooltipProps, TooltipState> {
     }
   }
 
-  customUnbindListener(ele) {
+  customUnbindListener(ele: HTMLElement) {
     const { event, eventOff } = this.state;
     const dataEvent = event || ele.getAttribute('data-event');
     const dataEventOff = eventOff || ele.getAttribute('data-event-off');
@@ -391,15 +375,15 @@ class ReactTooltip extends React.Component<TooltipProps, TooltipState> {
     this.unbindWindowEvents();
   }
 
-  hide() {
+  public static hide() {
     dispatchGlobalEvent(CONSTANT.GLOBAL.HIDE, this);
   }
 
-  rebuild() {
+  public static rebuild() {
     dispatchGlobalEvent(CONSTANT.GLOBAL.REBUILD, null);
   }
 
-  show() {
+  public static show() {
     dispatchGlobalEvent(CONSTANT.GLOBAL.SHOW, this);
   }
 
@@ -508,7 +492,7 @@ class ReactTooltip extends React.Component<TooltipProps, TooltipState> {
    * Return if the mouse is on the tooltip.
    * @returns {boolean} true - mouse is on the tooltip
    */
-  mouseOnToolTip() {
+  mouseOnToolTip(): boolean {
     const { show } = this.state;
 
     if (show && this.tooltipRef) {
@@ -521,9 +505,9 @@ class ReactTooltip extends React.Component<TooltipProps, TooltipState> {
   /**
    * Pick out corresponded target elements
    */
-  getTargetArray(id) {
+  getTargetArray(id: string) {
     let targetArray = [];
-    let selector;
+    let selector: string;
     if (!id) {
       selector = '[data-tip]:not([data-for])';
     } else {
@@ -533,8 +517,8 @@ class ReactTooltip extends React.Component<TooltipProps, TooltipState> {
 
     // Scan document for shadow DOM elements
     nodeListToArray(document.getElementsByTagName('*'))
-      .filter((element) => element.shadowRoot)
-      .forEach((element) => {
+      .filter((element: HTMLElement) => element.shadowRoot)
+      .forEach((element: HTMLElement) => {
         targetArray = targetArray.concat(
           nodeListToArray(element.shadowRoot.querySelectorAll(selector))
         );
@@ -853,7 +837,7 @@ class ReactTooltip extends React.Component<TooltipProps, TooltipState> {
     const { delayShow, disable } = this.state;
     const { afterShow } = this.props;
     const placeholder = this.getTooltipContent();
-    const eventTarget = e.currentTarget || e.target;
+    const eventTarget = (e.currentTarget || e.target) as HTMLElement; //type is dubious
 
     // Check if the mouse is actually over the tooltip, if so don't hide the tooltip
     if (this.mouseOnToolTip()) {
@@ -976,14 +960,9 @@ class ReactTooltip extends React.Component<TooltipProps, TooltipState> {
   /**
    * When scroll, hide tooltip
    */
-
-  // TODO: This signature is it even valid, it should only have one param???
-  // hideTooltipOnScroll = (event: Event, hasTarget: boolean)  => {
   hideTooltipOnScroll = (event: Event) => {
     this.hideTooltip(event, null, { isScroll: true });
   };
-
-  // addEventListener(type: "scroll", listener: (this: Window, ev: Event) => any, options?: boolean | AddEventListenerOptions): void
 
   /**
    * Add scroll event listener when tooltip show

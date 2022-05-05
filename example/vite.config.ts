@@ -4,6 +4,6 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), tsconfigPaths()],
+  plugins: [react({ jsxRuntime: 'classic' }), tsconfigPaths()], //jsxRuntime reason: https://github.com/vitejs/vite/issues/6215
   base: './' //relative
 });

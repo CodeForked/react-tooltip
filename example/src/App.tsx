@@ -1,8 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component, ReactNode } from 'react';
 import ReactTooltip from 'react-tooltip';
+import { Effect, Place, Type } from '../../dist/TooltipProps';
 
-export default class App extends Component<any, any> {
-  constructor(props) {
+type AppState = {
+  place: Place;
+  type: Type;
+  effect: Effect;
+  condition: boolean;
+};
+
+type AppProps = {
+  children?: ReactNode;
+};
+
+export default class App extends Component<AppProps, AppState> {
+  targetRef: HTMLAnchorElement;
+  constructor(props: AppProps | Readonly<AppProps>) {
     super(props);
     this.state = {
       place: 'top',
@@ -862,6 +875,47 @@ export default class App extends Component<any, any> {
               Padded tooltip
             </ReactTooltip>
           </div>
+
+          <div className="section">
+            <h4 className="title">Wrapping bug</h4>
+            <span
+              data-tip="Chocolate cake chocolate cake chocolate cake soufflé gummi bears chocolate sweet roll.
+              Gummies jelly beans dessert jelly-o tiramisu pudding. Halvah pastry toffee brownie
+              gingerbread apple pie gingerbread chocolate. Cake lollipop chocolate danish cookie carrot cake powder
+              shortbread candy. Powder caramels marshmallow shortbread
+              jelly beans gummi bears. Cupcake cupcake topping lemon drops muffin halvah. Pastry cotton candy lollipop
+              candy danish marzipan apple pie marshmallow. Toffee
+              donut icing candy canes candy canes liquorice sweet roll chocolate cake pudding. Gummi bears brownie
+               icing powder candy. Shortbread shortbread tiramisu cake
+              muffin icing pastry apple pie liquorice. Tootsie roll tootsie roll fruitcake chupa chups chupa chups
+               toffee tiramisu. Croissant liquorice wafer gummies powder
+              gingerbread jelly-o.
+              Tootsie roll brownie sweet muffin gummies wafer lollipop shortbread sugar plum. Tiramisu dessert donut
+               dragée donut caramels. Cheesecake cotton candy bonbon
+              jujubes sugar plum oat cake marzipan. Soufflé icing cookie jelly-o fruitcake ice cream caramels.
+              Marshmallow tiramisu toffee jelly beans sweet cookie. Donut
+              chocolate bar sweet jelly-o jelly soufflé pie marzipan. Marshmallow icing biscuit ice cream cake wafer
+               ice cream toffee toffee. Apple pie shortbread biscuit
+              brownie cake cookie candy croissant jelly-o. Biscuit shortbread toffee sweet roll pastry candy.
+               Chocolate cake topping bonbon toffee cupcake dragée cupcake
+              topping. Sweet jelly beans donut dragée tiramisu icing macaroon powder topping.
+              Dessert chocolate cake marzipan chocolate carrot cake icing sweet."
+            >
+              Hower to see the <code>react-tooltip</code> tooltip
+            </span>
+            <ReactTooltip
+              effect="solid"
+              place="top"
+              delayHide={15000}
+            ></ReactTooltip>
+          </div>
+
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
           <br />
           <br />
           <br />

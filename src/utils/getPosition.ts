@@ -1,3 +1,5 @@
+import { Offset, Place } from '../TooltipProps';
+
 /**
  * Calculate the position of tooltip
  *
@@ -14,10 +16,30 @@
  * - `newState` {Object}
  * - `position` {Object} {left: {Number}, top: {Number}}
  */
-export default function (e, target, node, place, desiredPlace, effect, offset) {
-  const { width: tipWidth, height: tipHeight } = getDimensions(node);
-
+export default function (
+  e: React.MouseEvent<HTMLElement, MouseEvent>,
+  target: HTMLElement,
+  node: HTMLElement,
+  place: Place,
+  desiredPlace: Place,
+  effect: string,
+  offset: Offset
+) {
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
+  let { width: tipWidth, height: tipHeight } = getDimensions(node);
   const { width: targetWidth, height: targetHeight } = getDimensions(target);
+
+  //tip is greater than window!!!!
+  if (tipWidth > windowWidth) {
+    const newWidth = windowWidth - 400;
+    node.style.width = `${newWidth}px`;
+    tipWidth = newWidth;
+  }
+  if (tipHeight > windowHeight) {
+    node.style.height = `${windowHeight}px`;
+    tipHeight = windowHeight;
+  }
 
   const { mouseX, mouseY } = getCurrentOffset(e, target, effect);
   const defaultOffset = getDefaultPosition(
@@ -27,27 +49,34 @@ export default function (e, target, node, place, desiredPlace, effect, offset) {
     tipWidth,
     tipHeight
   );
-  const { extraOffsetX, extraOffsetY } = calculateOffset(offset);
 
-  const windowWidth = window.innerWidth;
-  const windowHeight = window.innerHeight;
+  console.log(
+    'tipWidth, tipHeight, targetWidth, targetHeight, windowWidth',
+    tipWidth,
+    tipHeight,
+    targetWidth,
+    targetHeight,
+    window.innerWidth
+  );
+
+  const { extraOffsetX, extraOffsetY } = calculateOffset(offset);
 
   const { parentTop, parentLeft } = getParent(node);
 
   // Get the edge offset of the tooltip
-  const getTipOffsetLeft = (place: number) => {
+  const getTipOffsetLeft = (place: Place) => {
     const offsetX = defaultOffset[place].l;
     return mouseX + offsetX + extraOffsetX;
   };
-  const getTipOffsetRight = (place) => {
+  const getTipOffsetRight = (place: Place) => {
     const offsetX = defaultOffset[place].r;
     return mouseX + offsetX + extraOffsetX;
   };
-  const getTipOffsetTop = (place) => {
+  const getTipOffsetTop = (place: Place) => {
     const offsetY = defaultOffset[place].t;
     return mouseY + offsetY + extraOffsetY;
   };
-  const getTipOffsetBottom = (place) => {
+  const getTipOffsetBottom = (place: Place) => {
     const offsetY = defaultOffset[place].b;
     return mouseY + offsetY + extraOffsetY;
   };
@@ -66,18 +95,18 @@ export default function (e, target, node, place, desiredPlace, effect, offset) {
   //       |
   //  Bottom side
   //
-  const outsideLeft = (p) => getTipOffsetLeft(p) < 0;
-  const outsideRight = (p) => getTipOffsetRight(p) > windowWidth;
-  const outsideTop = (p) => getTipOffsetTop(p) < 0;
-  const outsideBottom = (p) => getTipOffsetBottom(p) > windowHeight;
+  const outsideLeft = (p: Place) => getTipOffsetLeft(p) < 0;
+  const outsideRight = (p: Place) => getTipOffsetRight(p) > windowWidth;
+  const outsideTop = (p: Place) => getTipOffsetTop(p) < 0;
+  const outsideBottom = (p: Place) => getTipOffsetBottom(p) > windowHeight;
 
   // Check whether the tooltip with orientation p is completely inside the client window
-  const outside = (p) =>
+  const outside = (p: Place) =>
     outsideLeft(p) || outsideRight(p) || outsideTop(p) || outsideBottom(p);
-  const inside = (p) => !outside(p);
+  const inside = (p: Place) => !outside(p);
 
-  const placesList = ['top', 'bottom', 'left', 'right'];
-  const insideList = [];
+  const placesList: Place[] = ['top', 'bottom', 'left', 'right'];
+  const insideList: Place[] = [];
   for (let i = 0; i < 4; i++) {
     const p = placesList[i];
     if (inside(p)) {
@@ -86,7 +115,7 @@ export default function (e, target, node, place, desiredPlace, effect, offset) {
   }
 
   let isNewState = false;
-  let newPlace;
+  let newPlace: Place;
   const shouldUpdatePlace = desiredPlace !== place;
   if (inside(desiredPlace) && shouldUpdatePlace) {
     isNewState = true;
@@ -112,16 +141,16 @@ export default function (e, target, node, place, desiredPlace, effect, offset) {
   };
 }
 
-const getDimensions = (node) => {
+const getDimensions = (node: HTMLElement) => {
   const { height, width } = node.getBoundingClientRect();
   return {
-    height: parseInt(height, 10),
-    width: parseInt(width, 10)
+    height: parseInt(height.toString(), 10),
+    width: parseInt(width.toString(), 10)
   };
 };
 
 // Get current mouse offset
-const getCurrentOffset = (e, currentTarget, effect) => {
+const getCurrentOffset = (e, currentTarget: HTMLElement, effect: string) => {
   const boundingClientRect = currentTarget.getBoundingClientRect();
   const targetTop = boundingClientRect.top;
   const targetLeft = boundingClientRect.left;
@@ -140,19 +169,26 @@ const getCurrentOffset = (e, currentTarget, effect) => {
   };
 };
 
+type PositionType = {
+  l: number;
+  r: number;
+  t: number;
+  b: number;
+};
+
 // List all possibility of tooltip final offset
 // This is useful in judging if it is necessary for tooltip to switch position when out of window
 const getDefaultPosition = (
-  effect,
-  targetWidth,
-  targetHeight,
-  tipWidth,
-  tipHeight
+  effect: string,
+  targetWidth: number,
+  targetHeight: number,
+  tipWidth: number,
+  tipHeight: number
 ) => {
-  let top;
-  let right;
-  let bottom;
-  let left;
+  let top: PositionType;
+  let right: PositionType;
+  let bottom: PositionType;
+  let left: PositionType;
   const disToMouse = 3;
   const triangleHeight = 2;
   const cursorHeight = 12; // Optimize for float bottom only, cause the cursor will hide the tooltip
@@ -213,7 +249,7 @@ const getDefaultPosition = (
 };
 
 // Consider additional offset into position calculation
-const calculateOffset = (offset) => {
+const calculateOffset = (offset: Offset) => {
   let extraOffsetX = 0;
   let extraOffsetY = 0;
 
@@ -222,13 +258,13 @@ const calculateOffset = (offset) => {
   }
   for (const key in offset) {
     if (key === 'top') {
-      extraOffsetY -= parseInt(offset[key], 10);
+      extraOffsetY -= parseInt(offset[key].toString(), 10);
     } else if (key === 'bottom') {
-      extraOffsetY += parseInt(offset[key], 10);
+      extraOffsetY += parseInt(offset[key].toString(), 10);
     } else if (key === 'left') {
-      extraOffsetX -= parseInt(offset[key], 10);
+      extraOffsetX -= parseInt(offset[key].toString(), 10);
     } else if (key === 'right') {
-      extraOffsetX += parseInt(offset[key], 10);
+      extraOffsetX += parseInt(offset[key].toString(), 10);
     }
   }
 
@@ -236,7 +272,7 @@ const calculateOffset = (offset) => {
 };
 
 // Get the offset of the parent elements
-const getParent = (currentTarget) => {
+const getParent = (currentTarget: Element) => {
   let currentParent = currentTarget;
   while (currentParent) {
     const computedStyle = window.getComputedStyle(currentParent);
@@ -252,10 +288,12 @@ const getParent = (currentTarget) => {
   }
 
   const parentTop = parseInt(
-    (currentParent && currentParent.getBoundingClientRect().top) || 0
+    (currentParent && currentParent.getBoundingClientRect().top.toString()) ||
+      '0'
   );
   const parentLeft = parseInt(
-    (currentParent && currentParent.getBoundingClientRect().left) || 0
+    (currentParent && currentParent.getBoundingClientRect().left.toString()) ||
+      '0'
   );
 
   return { parentTop, parentLeft };
