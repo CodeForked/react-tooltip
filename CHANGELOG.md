@@ -1,3 +1,10 @@
+# [4.3.0-alpha.6](https://github.com/CodeForked/react-tooltip/compare/v4.3.0-alpha.5...v4.3.0-alpha.6) (2022-05-05)
+
+
+### Bug Fixes
+
+* expose static methods on class ([a7b8cdf](https://github.com/CodeForked/react-tooltip/commit/a7b8cdf39ebdb56b6e65ab638d7f8e8656867e03))
+
 # [4.3.0-alpha.5](https://github.com/CodeForked/react-tooltip/compare/v4.3.0-alpha.4...v4.3.0-alpha.5) (2022-04-11)
 
 
