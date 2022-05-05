@@ -243,6 +243,27 @@ return(
 
 ```
 
+## Building
+
+### Troubleshooting
+
+Running yarn run build on windows 11 may produce an error
+
+```
+SyntaxError: Cannot use import statement outside a module.
+```
+
+Running under wsl2 shell or linux appears fine.
+Follow this issue (as it may be related) https://github.com/rollup/rollup/issues/4446
+
+@rollup/plugin-commonjs@22 triggers an error on build
+
+```
+[!] (plugin eslint) Error: Could not load /src/index.ts?commonjs-entry: No files matching '/src/index.ts?commonjs-entry' were found.
+```
+
+Reverting to 21.1 resolves error.
+
 ## Article
 
 [How I insert sass into react component](https://medium.com/@wwayne_me/how-i-insert-sass-into-my-npm-react-component-b46b9811c226#.gi4hxu44a)

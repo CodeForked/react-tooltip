@@ -1,22 +1,36 @@
+//const esModules = ['uuid'].join('|');
+const esModules = [].join('|');
+
 module.exports = {
   // The root of your source code, typically /src
   // `<rootDir>` is a token Jest substitutes
   roots: ['./src'],
 
   verbose: true,
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
   globals: {
     'ts-jest': {
       diagnostics: {
-        warnOnly: true
-      }
+        //warnOnly: true
+      },
+      useESM: true
     }
+  },
+
+  moduleNameMapper: {
+    '^(\\.{1,2}/.*)\\.js$': '$1'
   },
 
   // Jest transformations -- this adds support for TypeScript using ts-jest
   transform: {
-    '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.(tsx|ts)$': 'ts-jest',
     '^.+\\.scss$': 'jest-scss-transform'
   },
+
+  // https://stackoverflow.com/questions/49263429/jest-gives-an-error-syntaxerror-unexpected-token-export
+  // https://github.com/nrwl/nx/issues/812
+  // also need allowJs:true in tsconfig
+  // transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
 
   // Runs special logic, such as cleaning up components
   // when using React Testing Library and adds special
@@ -33,5 +47,5 @@ module.exports = {
 
   // Module file extensions for importing
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  preset: 'ts-jest'
+  preset: 'ts-jest/presets/js-with-ts-esm'
 };

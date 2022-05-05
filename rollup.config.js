@@ -20,12 +20,14 @@ export default {
   input: 'src/index.ts',
   output: [
     {
+      exports: 'auto',
       file: packageJson.main,
       format: 'cjs',
       sourcemap: true,
       name: 'react-tooltip'
     },
     {
+      exports: 'auto',
       file: packageJson.module,
       format: 'esm',
       sourcemap: true
