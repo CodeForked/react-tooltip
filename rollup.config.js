@@ -40,7 +40,10 @@ export default {
     }),
     external(), // Automatically externalize peerDependencies in a rollup bundle.
     typescript(),
-    commonjs(),
+
+    //DRAGONS: This guy is breaking/not playing well with eslint -- https://github.com/rollup/plugins/issues/1169
+    //Plugin to convert CommonJS modules to ES6, so they can be included in a Rollup bundle
+    //commonjs(),
 
     // stylelint({
     //   throwOnError: false,

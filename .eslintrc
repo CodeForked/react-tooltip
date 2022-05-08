@@ -6,7 +6,6 @@
     }
   },
   "extends": [
-    // "standard",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended"
@@ -18,7 +17,7 @@
     "node": true,
     "browser": true
   },
-  "plugins": ["@typescript-eslint", "react", "react-hooks"],
+  "plugins": ["react", "react-hooks"],
   "parserOptions": {
     "ecmaVersion": 12,
     "sourceType": "module",
