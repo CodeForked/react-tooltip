@@ -1,10 +1,10 @@
 /**
  * @jest-environment jsdom
  */
-import React from 'react';
 import ReactTooltip from '../index';
 import { render, cleanup } from '@testing-library/react';
 import forEach from 'mocha-each';
+import { act } from 'react-dom/test-utils';
 
 afterEach(() => {
   cleanup();
@@ -177,9 +177,11 @@ describe('Tooltip', () => {
       </span>
     );
     render(<ReactTooltip id="colorSpec" {...props} />);
-    document
-      .getElementById('colorSpecInvoker')
-      .dispatchEvent(new window.Event('mouseenter'));
+    act(() => {
+      document
+        .getElementById('colorSpecInvoker')
+        .dispatchEvent(new window.Event('mouseenter'));
+    });
 
     const tooltip = document.getElementById('colorSpec');
 
