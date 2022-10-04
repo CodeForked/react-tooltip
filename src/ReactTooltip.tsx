@@ -3,7 +3,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CONSTANT from './constant';
 
-/* Utils */
 import { bodyListener, findCustomEvents, getBody } from './decorators/bodyMode';
 import { getMutationObserverClass } from './decorators/trackRemoval';
 import getPosition from './utils/getPosition';
@@ -14,7 +13,6 @@ import { generateUUID } from './utils/uuid';
 import { checkStatus } from './decorators/customEvent';
 import { dispatchGlobalEvent } from './utils/dispatchGlobalEvent';
 
-/* CSS */
 import baseCss from './index.scss';
 import { generateTooltipStyle } from './decorators/styler';
 
@@ -191,7 +189,6 @@ class ReactTooltip extends React.Component<TooltipProps, TooltipState> {
     this.delayHideLoop = null;
     this.delayReshow = null;
     this.intervalUpdateContent = null;
-    console.log('constructor');
   }
 
   /**
@@ -221,7 +218,6 @@ class ReactTooltip extends React.Component<TooltipProps, TooltipState> {
     });
 
     observer.observe(window.document, { childList: true, subtree: true });
-
     this.removalTracker = observer;
   }
 
@@ -535,7 +531,6 @@ class ReactTooltip extends React.Component<TooltipProps, TooltipState> {
   bindListener() {
     const { id, globalEventOff, isCapture } = this.props;
     const targetArray = this.getTargetArray(id);
-    console.log('bindListener');
 
     targetArray.forEach((target) => {
       if (target.getAttribute('currentItem') === null) {
@@ -548,7 +543,6 @@ class ReactTooltip extends React.Component<TooltipProps, TooltipState> {
     });
 
     if (this.isBodyMode()) {
-      console.log('bindBodyListener');
       this.bindBodyListener(targetArray);
     } else {
       targetArray.forEach((target) => {
@@ -568,7 +562,6 @@ class ReactTooltip extends React.Component<TooltipProps, TooltipState> {
             isCaptureMode
           );
         }
-        console.log('Add listeners for leave');
         target.addEventListener('mouseleave', this.hideTooltip, isCaptureMode);
         target.addEventListener('blur', this.hideTooltip, isCaptureMode);
       });
@@ -908,7 +901,6 @@ class ReactTooltip extends React.Component<TooltipProps, TooltipState> {
    * When mouse leave, hide tooltip
    */
   hideTooltip(e?, hasTarget?, options = { isScroll: false }) {
-    console.log('hideTooltip');
     const { disable } = this.state;
     const { isScroll } = options;
     const delayHide = isScroll ? 0 : this.state.delayHide;
