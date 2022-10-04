@@ -1,9 +1,14 @@
-# [4.3.0-alpha.6](https://github.com/CodeForked/react-tooltip/compare/v4.3.0-alpha.5...v4.3.0-alpha.6) (2022-05-05)
+# [4.3.0-alpha.7](https://github.com/CodeForked/react-tooltip/compare/v4.3.0-alpha.6...v4.3.0-alpha.7) (2022-09-30)
 
+### Features
+
+- update to react 18 ([7a71ff6](https://github.com/CodeForked/react-tooltip/commit/7a71ff67b5f775eb7fff173f3ae0224e7399f4cb))
+
+# [4.3.0-alpha.6](https://github.com/CodeForked/react-tooltip/compare/v4.3.0-alpha.5...v4.3.0-alpha.6) (2022-05-05)
 
 ### Bug Fixes
 
-* expose static methods on class ([a7b8cdf](https://github.com/CodeForked/react-tooltip/commit/a7b8cdf39ebdb56b6e65ab638d7f8e8656867e03))
+- expose static methods on class ([a7b8cdf](https://github.com/CodeForked/react-tooltip/commit/a7b8cdf39ebdb56b6e65ab638d7f8e8656867e03))
 
 # [4.3.0-alpha.5](https://github.com/CodeForked/react-tooltip/compare/v4.3.0-alpha.4...v4.3.0-alpha.5) (2022-04-11)
 
