@@ -1,3 +1,10 @@
+# [4.3.0-alpha.8](https://github.com/CodeForked/react-tooltip/compare/v4.3.0-alpha.7...v4.3.0-alpha.8) (2022-10-04)
+
+
+### Bug Fixes
+
+* remove debug console logging ([b715590](https://github.com/CodeForked/react-tooltip/commit/b715590af1857250927f47c01a16452217fc050b))
+
 # [4.3.0-alpha.7](https://github.com/CodeForked/react-tooltip/compare/v4.3.0-alpha.6...v4.3.0-alpha.7) (2022-09-30)
 
 ### Features
